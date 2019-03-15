@@ -1,6 +1,6 @@
 #nav-bar {
     background-image: linear-gradient(#D6E9FF, rgba(189, 221, 255, 0.62));
-    color: white
+    color: white;
 }
 
 h1 {
@@ -35,4 +35,8 @@ body {
 
 .card {
     margin-bottom: 30px;
+}
+
+#ocean {
+    margin-top: 10px;
 }
