@@ -11,6 +11,7 @@
     "react-scripts": "3.0.0",
     "reactstrap": "^8.0.0"
   },
+  "homepage": "https://chiuy5.github.io/drifting/drifing/build",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
