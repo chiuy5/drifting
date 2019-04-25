@@ -16,9 +16,10 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-        <Route exact path="/" component={Home} />
-          <Route path="/processing" component={ForumSubmission} />
-          <Route path="/encourage" component={Encouragement} />
+          <Route exact path="/" render={() => <Home />} />
+          <Route path="/processing/" render={() => <ForumSubmission />} />
+          <Route path="/encourage/" render={() => <Encouragement />} />
+
 
         </div>
       </Router>
@@ -29,6 +30,9 @@ class App extends Component {
 export default App;
 
 /*
-          <Route exact path="/" render={() => <Home />} />
-          <Route path="/processing" render={() => <ForumSubmission />} />
-          <Route path="/encourage" render={() => <Encouragement />} />*/
+
+          
+          
+                  <Route exact path="/" component={Home} />
+          <Route path="/processing" component={ForumSubmission} />
+          <Route path="/encourage" component={Encouragement} />*/
