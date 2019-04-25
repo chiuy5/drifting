@@ -43,7 +43,7 @@ body {
 }
 
 #nav-links {
-    margin-top: 20px;
+    margin-top: -20px;
     font-size: 10pt;
-    margin-bottom: 20px;
+    margin-bottom: 10%;
 }

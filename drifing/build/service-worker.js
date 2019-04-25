@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-sw.js");
 
 importScripts(
-  "/drifting/drifing/build/precache-manifest.d478e8ca55a542a36191df4cedab1bbe.js"
+  "/drifting/drifing/build/precache-manifest.2343182a620904fdf22c03b98027ce9a.js"
 );
 
 self.addEventListener('message', (event) => {

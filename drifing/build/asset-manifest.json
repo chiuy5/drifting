@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/drifting/drifing/build/static/css/main.0be8b036.chunk.css",
-    "main.js": "/drifting/drifing/build/static/js/main.48e792f1.chunk.js",
-    "main.js.map": "/drifting/drifing/build/static/js/main.48e792f1.chunk.js.map",
+    "main.css": "/drifting/drifing/build/static/css/main.dc9ec59c.chunk.css",
+    "main.js": "/drifting/drifing/build/static/js/main.c0e873e3.chunk.js",
+    "main.js.map": "/drifting/drifing/build/static/js/main.c0e873e3.chunk.js.map",
     "runtime~main.js": "/drifting/drifing/build/static/js/runtime~main.4ce0aeb7.js",
     "runtime~main.js.map": "/drifting/drifing/build/static/js/runtime~main.4ce0aeb7.js.map",
     "static/css/2.22a7d4ef.chunk.css": "/drifting/drifing/build/static/css/2.22a7d4ef.chunk.css",
-    "static/js/2.75d38188.chunk.js": "/drifting/drifing/build/static/js/2.75d38188.chunk.js",
-    "static/js/2.75d38188.chunk.js.map": "/drifting/drifing/build/static/js/2.75d38188.chunk.js.map",
+    "static/js/2.f01ee1f1.chunk.js": "/drifting/drifing/build/static/js/2.f01ee1f1.chunk.js",
+    "static/js/2.f01ee1f1.chunk.js.map": "/drifting/drifing/build/static/js/2.f01ee1f1.chunk.js.map",
     "index.html": "/drifting/drifing/build/index.html",
-    "precache-manifest.d478e8ca55a542a36191df4cedab1bbe.js": "/drifting/drifing/build/precache-manifest.d478e8ca55a542a36191df4cedab1bbe.js",
+    "precache-manifest.2343182a620904fdf22c03b98027ce9a.js": "/drifting/drifing/build/precache-manifest.2343182a620904fdf22c03b98027ce9a.js",
     "service-worker.js": "/drifting/drifing/build/service-worker.js",
     "static/css/2.22a7d4ef.chunk.css.map": "/drifting/drifing/build/static/css/2.22a7d4ef.chunk.css.map",
-    "static/css/main.0be8b036.chunk.css.map": "/drifting/drifing/build/static/css/main.0be8b036.chunk.css.map",
-    "static/media/logo.svg": "/drifting/drifing/build/static/media/logo.5d5d9eef.svg"
+    "static/css/main.dc9ec59c.chunk.css.map": "/drifting/drifing/build/static/css/main.dc9ec59c.chunk.css.map",
+    "static/media/logo.svg": "/drifting/drifing/build/static/media/logo.ee7cd8ed.svg"
   }
 }
