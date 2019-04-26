@@ -15,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <Route exact path="./" render={() => <Home />} />
           <Route path="./processing" render={() => <ForumSubmission />} />
           <Route path="./encourage" render={() => <Encouragement />} />
