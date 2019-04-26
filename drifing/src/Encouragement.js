@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Button, Form, FormControl, FormCheck } from 'react-bootstrap';
 import { Card, CardText, CardBody, CardTitle } from 'reactstrap';
 import Forum from './Forum';
+import { Link } from "react-router-dom";
 //import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 export default class Encouragement extends Component {
@@ -223,7 +224,7 @@ export default class Encouragement extends Component {
         return (
             <div className="container">
                 <div id="nav-links">
-                    <a href="./">Home</a> | <a href="./#/processing">Emotional Processing</a> | <a href="./#/encourage">Encouragement</a>
+                <Link to="/">Home</Link> | <Link to="/processing">Emotional Processing</Link> | <Link to="/encourage">Encourage</Link>
                 </div>
 
                 <div className="intro">
