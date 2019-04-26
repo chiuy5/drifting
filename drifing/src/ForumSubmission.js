@@ -231,7 +231,7 @@ export default class ForumSubmission extends Component {
                 <section id="child">
                     <div className="intro">
                         <div id="nav-links">
-                            <a href="./">Home</a> | <a href="./processing">Emotional Processing</a> | <a href="./encourage">Encouragement</a>
+                            <a href="./">Home</a> | <a href="./#/processing">Emotional Processing</a> | <a href="./#/encourage">Encouragement</a>
                         </div>
 
 
