@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {Link} from "react-router-dom";
 //import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 export default class Encouragement extends Component {
@@ -18,7 +18,8 @@ export default class Encouragement extends Component {
                     <br />
 
                     <div id="nav-link">
-                        <a href="./#/processing">Emotional Processing </a> | <a href="./#/encourage">Encourage</a>
+                        {/*<a href="/processing">Emotional Processing </a> | <a href="/encourage">Encourage</a>*/}
+                        <Link to="/processing">Emotional Processing</Link> | <Link to="/encourage">Encourage</Link>
                     </div>
 
                 </div>
