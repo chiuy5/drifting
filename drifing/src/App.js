@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Navbar, Nav, NavItem, MenuItem, NavDropdown, Button, Form, FormControl, Container, Image } from 'react-bootstrap';
-import { HashRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
 import ForumSubmission from "./ForumSubmission";
@@ -16,9 +16,9 @@ class App extends Component {
     return (
       <div className="App">
         <Router basename={process.env.PUBLIC_URL}>
-          <Route exact path="/" render={() => <Home />} />
-          <Route exact path="/processing" render={() => <ForumSubmission />} />
-          <Route exact path="/encourage" render={() => <Encouragement />} />
+          <Route exact path="/" component={Home} />
+          <Route path="/processing" component={ForumSubmission} />
+          <Route path="/encourage" component={Encouragement} />
         </Router>
       </div>
     );
@@ -28,11 +28,12 @@ class App extends Component {
 export default App;
 
 /*
- <Route exact path="/" render={() => <Home />} />
-            <Route path="/processing/" render={() => <ForumSubmission />} />
-            <Route path="/encourage/" render={() => <Encouragement />} />
+          <Route exact path="/" render={() => <Home />} />
+          <Route path="/processing/" render={() => <ForumSubmission />} />
+          <Route path="/encourage/" render={() => <Encouragement />} />
           
-          
-                  <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route path="/processing" component={ForumSubmission} />
-          <Route path="/encourage" component={Encouragement} />*/
+          <Route path="/encourage" component={Encouragement} />
+
+*/
