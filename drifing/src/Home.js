@@ -16,8 +16,9 @@ export default class Encouragement extends Component {
                     <a href="./">
                         <img src="drifting-logo.jpg" className="drifting-logo" /></a>
                     <br />
+
                     <div id="nav-link">
-                        <a href="./processing">Emotional Processing </a> | <a href="./encourage">Encourage</a>
+                        <a href="./#/processing">Emotional Processing </a> | <a href="./#/encourage">Encourage</a>
                     </div>
 
                 </div>

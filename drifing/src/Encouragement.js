@@ -223,7 +223,7 @@ export default class Encouragement extends Component {
         return (
             <div className="container">
                 <div id="nav-links">
-                    <a href="./">Home</a> | <a href="./processing">Emotional Processing</a> | <a href="./encourage">Encouragement</a>
+                    <a href="./">Home</a> | <a href="./#/processing">Emotional Processing</a> | <a href="./#/encourage">Encouragement</a>
                 </div>
 
                 <div className="intro">
