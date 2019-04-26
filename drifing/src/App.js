@@ -16,10 +16,9 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          
-          <Route exact path="/" render={() => <Home />} />
-          <Route path="/processing" render={() => <ForumSubmission />} />
-          <Route path="/encourage" render={() => <Encouragement />} />
+          <Route exact path="./" render={() => <Home />} />
+          <Route path="./processing" render={() => <ForumSubmission />} />
+          <Route path="./encourage" render={() => <Encouragement />} />
         </Router>
       </div>
     );
