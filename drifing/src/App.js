@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Navbar, Nav, NavItem, MenuItem, NavDropdown, Button, Form, FormControl, Container, Image } from 'react-bootstrap';
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 import ForumSubmission from "./ForumSubmission";
 import Encouragement from "./Encouragement";
-import Forum from "./Forum";
 import Home from "./Home";
+import Exercise from "./Exercise"
 
 class App extends Component {
 
@@ -20,6 +20,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/processing" component={ForumSubmission} />
             <Route path="/encourage" component={Encouragement} />
+            <Route path="/exercise" component={Exercise} />
           </Switch>
         </Router>
       </div>

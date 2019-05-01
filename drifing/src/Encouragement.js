@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './Encouragement.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button, Form, FormControl, FormCheck } from 'react-bootstrap';
+/*import { Button, Form, FormControl, FormCheck } from 'react-bootstrap';
 import { Card, CardText, CardBody, CardTitle } from 'reactstrap';
-import Forum from './Forum';
+import Forum from './Forum';*/
 import { Link } from "react-router-dom";
 //import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
@@ -254,58 +254,6 @@ export default class Encouragement extends Component {
 
                 <section id="child">
                     <form>
-
-                        {/*<div id="section">
-                        <label >How are you feeling right now?</label>
-                        <br />
-                        <div className="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label className="btn btn-secondary">
-                                <input type="radio"
-                                    name="emotion"
-                                    value="+2"
-                                    checked={this.state.emotion === "+2"}
-                                    onChange={(event) => { this.handleChange(event) }}
-                                />
-                                Great
-                        </label>
-                            <label className="btn btn-secondary">
-                                <input type="radio"
-                                    name="emotion"
-                                    value="+1"
-                                    checked={this.state.emotion === "+1"}
-                                    onChange={(event) => { this.handleChange(event) }}
-                                />
-                                Good
-                        </label>
-                            <label className="btn btn-secondary">
-                                <input type="radio"
-                                    name="emotion"
-                                    value="0"
-                                    checked={this.state.emotion === "0"}
-                                    onChange={(event) => { this.handleChange(event) }}
-                                />
-                                Okay
-                        </label>
-                            <label className="btn btn-secondary">
-                                <input type="radio"
-                                    name="emotion"
-                                    value="-1"
-                                    checked={this.state.emotion === "-1"}
-                                    onChange={(event) => { this.handleChange(event) }}
-                                />
-                                Bad
-                        </label>
-                            <label className="btn btn-secondary">
-                                <input type="radio"
-                                    name="emotion"
-                                    value="-2"
-                                    checked={this.state.emotion === "-2"}
-                                    onChange={(event) => { this.handleChange(event) }}
-                                />
-                                Awful
-                        </label>
-                        </div>
-                    </div>*/}
 
                         <div id="section">
                             <div className="form-group">

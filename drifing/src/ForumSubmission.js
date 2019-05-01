@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 //import './App.css';
 import './ForumSubmission.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button, Form, FormControl, FormCheck } from 'react-bootstrap';
+/*import { Button, Form, FormControl, FormCheck } from 'react-bootstrap';*/
 /* import { Card, CardText, CardBody, CardTitle } from 'reactstrap'; */
-import Forum from './Forum';
+/*import Forum from './Forum';*/
 import { Link } from 'react-router-dom';
 //import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import Mindfulness from "./components/Mindfulness";
 
 export default class ForumSubmission extends Component {
     // Set up a blank title and description input field
@@ -381,9 +382,11 @@ export default class ForumSubmission extends Component {
                     </section>
 
                     <section id="child">
-                        <br />
+                        {/*<br />
                         <p> [ ** Will add a Mindfulness exercise ** ]</p>
-                        <br />
+                        <br />*/}
+                        <p> Take some time to complete this mindfulness exercise or scroll down to skip </p>
+                        <Mindfulness />
                     </section>
 
                     <section id="child">
