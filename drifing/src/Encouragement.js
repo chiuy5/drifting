@@ -222,31 +222,40 @@ export default class Encouragement extends Component {
 
     render() {
         return (
-            <div className="container">
-                <div id="nav-links">
-                <Link to="/">Home</Link> | <Link to="/processing">Emotional Processing</Link> | <Link to="/encourage">Encourage</Link>
-                </div>
+            <div className="container" id="exercise">
 
-                <div className="intro">
-                    <h1>Encouraging Bottle</h1>
 
-                    <div id="description">
-                        <p>Share an encouraging message. It can be advice, a resource, a personal experience, or words of comfort</p>
-
-                        <div id="guide">
-                            Be empathetic<br />
-                            Acknowledge, but not minimize, other's emotions<br />
-                            Don't feel pressure to have to talk<br />
+                <section id="child">
+                    <div className="intro">
+                        <div id="nav-links">
+                            <Link to="/">Home</Link> | <Link to="/processing">Emotional Processing</Link> | <Link to="/encourage">Encourage</Link>
                         </div>
 
+                        <h1>Encouraging Bottle</h1>
+                        <br />
+                        <div id="description">
+                            <p>Share an encouraging message. It can be advice, a resource, a personal experience, or words of comfort</p>
+
+                            <div id="guide">
+                                Be empathetic<br />
+                                Acknowledge, but not minimize, other's emotions<br />
+                                Don't feel pressure to have to talk<br />
+                            </div>
+
+                            <br />
+                            <br />
+                            <p>Scroll or Swipe Down to Continue</p>
+                            <h2>↓</h2>
+
+                        </div>
                     </div>
-                </div>
+                </section>
 
 
+                <section id="child">
+                    <form>
 
-                <form>
-
-                    {/*<div id="section">
+                        {/*<div id="section">
                         <label >How are you feeling right now?</label>
                         <br />
                         <div className="btn-group btn-group-toggle" data-toggle="buttons">
@@ -298,45 +307,46 @@ export default class Encouragement extends Component {
                         </div>
                     </div>*/}
 
-                    <div id="section">
-                        <div className="form-group">
-                            <label htmlFor="exampleFormControlTextarea1">Write some Encouragement</label>
-                            <textarea className="form-control"
-                                name="0"
-                                value={this.state.body[0]}
-                                onChange={(event) => { this.handleQuestion(event) }}
-                                id="exampleFormControlTextarea1"
-                                rows="3"
-                                placeholder="Write something here..."
-                                aria-label="some description texts">
-                            </textarea>
+                        <div id="section">
+                            <div className="form-group">
+                                <label htmlFor="exampleFormControlTextarea1">Write some Encouragement</label>
+                                <textarea className="form-control"
+                                    name="0"
+                                    value={this.state.body[0]}
+                                    onChange={(event) => { this.handleQuestion(event) }}
+                                    id="exampleFormControlTextarea1"
+                                    rows="3"
+                                    placeholder="Write something here..."
+                                    aria-label="some description texts">
+                                </textarea>
+                            </div>
                         </div>
-                    </div>
 
-                    <div id="section">
-                        <div className="form-group">
-                            <label htmlFor="formGroupExampleInput">Tags</label>
-                            <input type="text" className="form-control"
-                                name="tags"
-                                value={this.state.tags}
-                                onChange={(event) => { this.handleChange(event) }}
-                                id="formGroupExampleInput"
-                                placeholder="Tag your bottle..."
-                                aria-label="Tag your bottle"
-                            />
+                        <div id="section">
+                            <div className="form-group">
+                                <label htmlFor="formGroupExampleInput">Tags</label>
+                                <input type="text" className="form-control"
+                                    name="tags"
+                                    value={this.state.tags}
+                                    onChange={(event) => { this.handleChange(event) }}
+                                    id="formGroupExampleInput"
+                                    placeholder="Tag your bottle..."
+                                    aria-label="Tag your bottle"
+                                />
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
 
-                <button className="btn btn-primary mr-2" onClick={(e) => this.addBottle(e)}>
-                    Public
+                    <button className="btn btn-primary mr-2" onClick={(e) => this.addBottle(e)}>
+                        Public
                 </button>
-                <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
-                    Only I Can See
+                    <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
+                        Only I Can See
                 </button>
-                <button className="btn btn-primary mr-2" onClick={() => this.disposeBottle()}>
-                    Dispose
+                    <button className="btn btn-primary mr-2" onClick={() => this.disposeBottle()}>
+                        Dispose
                 </button>
+                </section>
             </div>
 
         );
