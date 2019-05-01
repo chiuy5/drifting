@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import './Encouragement.css';
+//import './App.css';
+import './ForumSubmission.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button, Form, FormControl, FormCheck } from 'react-bootstrap';
-import { Card, CardText, CardBody, CardTitle } from 'reactstrap';
-import Forum from './Forum';
-import { Link } from "react-router-dom";
+/*import { Button, Form, FormControl, FormCheck } from 'react-bootstrap';*/
+/* import { Card, CardText, CardBody, CardTitle } from 'reactstrap'; */
+/*import Forum from './Forum';*/
+import { Link } from 'react-router-dom';
 //import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import Mindfulness from "./../components/Mindfulness";
 
-export default class Encouragement extends Component {
+export default class ForumSubmission extends Component {
     // Set up a blank title and description input field
     constructor(props) {
         super(props);
@@ -222,32 +224,37 @@ export default class Encouragement extends Component {
 
     render() {
         return (
-            <div className="container">
-                <div id="nav-links">
-                <Link to="/">Home</Link> | <Link to="/processing">Emotional Processing</Link> | <Link to="/encourage">Encourage</Link>
-                </div>
 
-                <div className="intro">
-                    <h1>Encouraging Bottle</h1>
 
-                    <div id="description">
-                        <p>Share an encouraging message. It can be advice, a resource, a personal experience, or words of comfort</p>
 
-                        <div id="guide">
-                            Be empathetic<br />
-                            Acknowledge, but not minimize, other's emotions<br />
-                            Don't feel pressure to have to talk<br />
+            <div className="container" id="exercise">
+
+
+                <section id="child">
+                    <div className="intro">
+                        <div id="nav-links">
+                            <Link to="/">Home</Link> | <Link to="/processing">Emotional Processing</Link> | <Link to="/encourage">Encourage</Link>
+                        </div>
+
+
+                        <h1>New Bottle</h1>
+
+                        <div id="description">
+                            <br />
+                            <p>Go through the following exercise to sort out what's on your mind</p>
+                            <p>You are free to go at your own pace and skip any questions you want</p>
+                            <br />
+                            <br />
+                            <p>Scroll or Swipe Down to Continue</p>
+                            <h2>↓</h2>
+
                         </div>
 
                     </div>
-                </div>
-
-
-
+                </section>
                 <form>
-
-                    {/*<div id="section">
-                        <label >How are you feeling right now?</label>
+                    <section id="child">
+                        <label>(1/7) How are you feeling right now?</label>
                         <br />
                         <div className="btn-group btn-group-toggle" data-toggle="buttons">
                             <label className="btn btn-secondary">
@@ -296,24 +303,109 @@ export default class Encouragement extends Component {
                                 Awful
                         </label>
                         </div>
-                    </div>*/}
+                    </section>
 
-                    <div id="section">
+                    <section id="child">
                         <div className="form-group">
-                            <label htmlFor="exampleFormControlTextarea1">Write some Encouragement</label>
+                            <label htmlFor="exampleFormControlTextarea1">(2/7) What happened?</label>
                             <textarea className="form-control"
                                 name="0"
                                 value={this.state.body[0]}
                                 onChange={(event) => { this.handleQuestion(event) }}
                                 id="exampleFormControlTextarea1"
                                 rows="3"
-                                placeholder="Write something here..."
+                                placeholder="Write about something on your mind (for example: I failed my exam) ..."
                                 aria-label="some description texts">
                             </textarea>
                         </div>
-                    </div>
+                    </section>
 
-                    <div id="section">
+                    <section id="child">
+                        <div className="form-group">
+                            <label htmlFor="exampleFormControlTextarea1">(3/7) Could the situation be worse than it is? And how so?</label>
+                            <textarea className="form-control"
+                                name="2"
+                                value={this.state.body[2]}
+                                onChange={(event) => { this.handleQuestion(event) }}
+                                id="exampleFormControlTextarea1"
+                                rows="3"
+                                placeholder="Think about what could be the worse case scenario for your situation (i.e. I slept through my exam) ..."
+                                aria-label="some description texts">
+                            </textarea>
+                        </div>
+                    </section>
+
+                    <section id="child">
+                        <div className="form-group">
+                            <label htmlFor="exampleFormControlTextarea1"> (4/7) What are some factors that contributed to the situation?</label>
+                            <textarea className="form-control"
+                                name="3"
+                                value={this.state.body[3]}
+                                onChange={(event) => { this.handleQuestion(event) }}
+                                id="exampleFormControlTextarea1"
+                                rows="3"
+                                placeholder="There may be outside factors to consider that have you feel this way (i.e. I didn't get enough sleep)"
+                                aria-label="some description texts">
+
+                            </textarea>
+                        </div>
+                    </section>
+
+                    <section id="child">
+                        <div className="form-group">
+                            <label htmlFor="exampleFormControlTextarea1"> (5/7) What factors in the situation are in your control?</label>
+                            <textarea className="form-control"
+                                name="4"
+                                value={this.state.body[4]}
+                                onChange={(event) => { this.handleQuestion(event) }}
+                                id="exampleFormControlTextarea1"
+                                rows="3"
+                                placeholder="Think about the things you put for the previous prompt and which of those things you can address"
+                                aria-label="some description texts">
+                            </textarea>
+                        </div>
+                    </section>
+
+                    <section id="child">
+                        <div className="form-group">
+                            <label htmlFor="exampleFormControlTextarea1"> (6/7) Can you brainstorm solutions you can do to address your situation?</label>
+                            <textarea className="form-control"
+                                name="5"
+                                value={this.state.body[5]}
+                                onChange={(event) => { this.handleQuestion(event) }}
+                                id="exampleFormControlTextarea1"
+                                rows="3"
+                                placeholder="Think of some resources you can use or actions you can do"
+                                aria-label="some description texts">
+                            </textarea>
+                        </div>
+                    </section>
+
+                    <section class="mindful" id="child">
+                        {/*<br />
+                        <p> [ ** Will add a Mindfulness exercise ** ]</p>
+                        <br />*/}
+                        <p> Take some time to complete this mindfulness exercise or scroll down to skip </p>
+                        <Mindfulness />
+                        <br />
+                        <br />
+                        <br />
+
+                    </section>
+
+                    <section id="child">
+                        <div className="form-group">
+                            <label htmlFor="exampleFormControlTextarea1"> (7/7) How do you feel now?</label>
+                            <textarea className="form-control"
+                                name="6"
+                                value={this.state.body[6]}
+                                onChange={(event) => { this.handleQuestion(event) }}
+                                id="exampleFormControlTextarea1"
+                                rows="3"
+                                aria-label="some description texts">
+                            </textarea>
+                        </div>
+
                         <div className="form-group">
                             <label htmlFor="formGroupExampleInput">Tags</label>
                             <input type="text" className="form-control"
@@ -321,23 +413,27 @@ export default class Encouragement extends Component {
                                 value={this.state.tags}
                                 onChange={(event) => { this.handleChange(event) }}
                                 id="formGroupExampleInput"
-                                placeholder="Tag your bottle..."
-                                aria-label="Tag your bottle"
+                                placeholder="Tags for your bottle"
+                                aria-label="Tags for your bottle"
                             />
                         </div>
-                    </div>
-                </form>
 
-                <button className="btn btn-primary mr-2" onClick={(e) => this.addBottle(e)}>
-                    Public
-                </button>
-                <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
-                    Only I Can See
-                </button>
-                <button className="btn btn-primary mr-2" onClick={() => this.disposeBottle()}>
-                    Dispose
-                </button>
+                        <div id="buttons">
+                            <button className="btn btn-primary mr-2" onClick={(e) => this.addBottle(e)}>
+                                Make Public
+                         </button>
+                            <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
+                                Only I Can See
+                         </button>
+                            <button className="btn btn-primary mr-2" onClick={() => this.disposeBottle()}>
+                                Dispose
+                        </button>
+                        </div>
+                    </section>
+                </form>
             </div>
+
+
 
         );
     }

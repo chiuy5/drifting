@@ -47,3 +47,21 @@ body {
     font-size: 10pt;
     margin-bottom: 10%;
 }
+
+#child {
+    height: 100vh;
+    scroll-snap-align: center;
+    scroll-snap-destination: 50% 50%;
+    position: relative;
+    padding-top: 20vh; 
+}
+
+#exercise {
+    background: rgba(red, green, blue, 0);
+    overflow: scroll;
+    height: 100vh;
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+    color: #7A6085;
+}
