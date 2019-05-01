@@ -148,7 +148,7 @@ export default class ForumSubmission extends Component {
             body: JSON.stringify(
                 {
                     emotion: this.state.emotion,
-                    exercise: this.state.exercise,
+                    exercise: 1,
                     body: this.state.body,
                     tags: this.state.tags,
                     isPublic: this.state.isPublic
