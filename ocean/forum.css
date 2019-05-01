@@ -1,0 +1,59 @@
+#nav-bar {
+    background-image: linear-gradient(#D6E9FF, rgba(189, 221, 255, 0.62));
+    color: white
+}
+
+h1 {
+    padding-top: 20px;
+}
+
+body {
+    background-image: linear-gradient(rgba(189, 221, 255, 0.62), #E1B0FF);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#tag-holder {
+    background-color: rgba(0, 0, 0, 0.42);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#clearFilterTags{
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.42);
+    color: white;
+    height: 350px;
+    width: 300px;
+    overflow: hidden;
+}
+
+.btn-outline-white {
+    color: white;
+}
+
+.card {
+    margin-bottom: 30px;
+}
+
+.read-more {
+    position: absolute;
+    top: 260px; left: 80px;
+}
+
+#individual-bottle {
+    background-color: white;
+    position: fixed;
+    top: 10vh; left: 10vw;
+    z-index: 2000;
+    width: 80vw;
+    height: 80vh;
+    margin: auto;
+    overflow-y: scroll;
+    overflow-x:hidden;
+    border-radius: 3px;
+}
