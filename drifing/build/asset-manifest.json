@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/drifting/drifing/build/static/css/main.a7f4625f.chunk.css",
+    "main.css": "/drifting/drifing/build/static/css/main.4889217a.chunk.css",
     "main.js": "/drifting/drifing/build/static/js/main.3ffb70e9.chunk.js",
     "main.js.map": "/drifting/drifing/build/static/js/main.3ffb70e9.chunk.js.map",
     "runtime~main.js": "/drifting/drifing/build/static/js/runtime~main.4ce0aeb7.js",
@@ -9,10 +9,10 @@
     "static/js/2.34d7aed8.chunk.js": "/drifting/drifing/build/static/js/2.34d7aed8.chunk.js",
     "static/js/2.34d7aed8.chunk.js.map": "/drifting/drifing/build/static/js/2.34d7aed8.chunk.js.map",
     "index.html": "/drifting/drifing/build/index.html",
-    "precache-manifest.e89eb3e429b4a8ab5613bdb0ffa1386f.js": "/drifting/drifing/build/precache-manifest.e89eb3e429b4a8ab5613bdb0ffa1386f.js",
+    "precache-manifest.0ef89fe7c22036e96bc1386c3203ad77.js": "/drifting/drifing/build/precache-manifest.0ef89fe7c22036e96bc1386c3203ad77.js",
     "service-worker.js": "/drifting/drifing/build/service-worker.js",
     "static/css/2.22a7d4ef.chunk.css.map": "/drifting/drifing/build/static/css/2.22a7d4ef.chunk.css.map",
-    "static/css/main.a7f4625f.chunk.css.map": "/drifting/drifing/build/static/css/main.a7f4625f.chunk.css.map",
+    "static/css/main.4889217a.chunk.css.map": "/drifting/drifing/build/static/css/main.4889217a.chunk.css.map",
     "static/media/logo.svg": "/drifting/drifing/build/static/media/logo.ee7cd8ed.svg"
   }
 }
