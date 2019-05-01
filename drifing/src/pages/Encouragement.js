@@ -19,7 +19,7 @@ export default class Encouragement extends Component {
             isPublic: true,
         };
 
-        this.displayMessage = this.displayMessage.bind(this);
+        //this.displayMessage = this.displayMessage.bind(this);
 
         //this.handleChange = this.handleChange.bind(this);
         //this.postBottle = this.postBottle.bind(this);

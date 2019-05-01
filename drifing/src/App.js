@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 import ForumSubmission from "./pages/ForumSubmission";
-import Encouragement from "./components/Encouragement";
+import Encouragement from "./pages/Encouragement";
 import Home from "./pages/Home";
 import Exercise from "./pages/Exercise"
 

@@ -43,12 +43,18 @@ html, body {
 }
 
 #child {
-    height: 80vh;
-    scroll-snap-align: center;
+    height: 100vh;
+    -webkit-scroll-snap-align: center;
     scroll-snap-destination: 50% 50%;
     position: relative;
-    padding-top: 20vh; 
+    padding-top: 20vh;
+
 }
+
+.mindful {
+    margin-top: -40px
+}
+
 
 
 #buttons {
