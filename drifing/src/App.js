@@ -5,10 +5,10 @@ import { Navbar, Nav, NavItem, MenuItem, NavDropdown, Button, Form, FormControl,
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
-import ForumSubmission from "./ForumSubmission";
-import Encouragement from "./Encouragement";
-import Home from "./Home";
-import Exercise from "./Exercise"
+import ForumSubmission from "./pages/ForumSubmission";
+import Encouragement from "./components/Encouragement";
+import Home from "./pages/Home";
+import Exercise from "./pages/Exercise"
 
 class App extends Component {
 

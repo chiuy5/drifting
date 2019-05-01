@@ -46,97 +46,8 @@ export default class Encouragement extends Component {
         });
     }
 
-    // Function for submit and display the user input message
-    displayMessage(event) {
-        event.preventDefault();
-        let message = {}
-        this.setState({
-            message: this.state.body
-        }
-            // }, () => {
-            //     console.log("message", this.state.message);
-        )
-
-        fetch("https://api.kychiu.me/v1/ocean/ocean", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json"
-            },
-        }).then(res => {
-            return res.text();
-        }).then((data) => {
-
-            this.setState({
-                message: data
-
-            })
-
-        }).catch((err, data) => {
-            console.log(err);
-            console.log("message1", data);
-        });
-
-    }
-
-
-    // When the user click submit, the value change on title and description 
-    //onSubmit = e => {
-    //    e.preventDefault();
-    //    this.props.onSubmit(this.state);
-    //    this.setState({
-    //        title: "",
-    //        description: ""
-    //    })
-    //};
-    /*
-        addBottle() {
-            console.log(this.state.isPublic);
-            let bottle = {
-                emotion: this.state.emotion,
-                exercise: this.state.exercise,
-                body: this.state.body,
-                tags: this.state.tags,
-                isPublic: this.state.isPublic,
-            }
-    
-            console.log(bottle);
-    
-            fetch("https://api.kychiu.me/v1/ocean/ocean", {
-                method: "POST",
-                body: 
-                    {emotion: this.state.emotion,
-                        exercise: this.state.exercise,
-                        body: this.state.body,
-                        tags: this.state.tags,
-                        isPublic: this.state.isPublic
-                    }
-            }).then(res => {
-                return res.json();
-            }).then((data) => {
-                console.log("bottle1", data);
-                this.clearState();
-            }).catch((err, data) => {
-                console.log(err);
-                console.log("bottle2", data);
-            });
-    
-    
-            
-            //this.cardsRef.push(card);    
-        }
-    }*/
 
     addBottle = (e) => {
-        /*console.log(this.state.isPublic);
-        let bottle = {
-            emotion: this.state.emotion,
-            exercise: this.state.exercise,
-            body: this.state.body,
-            tags: this.state.tags,
-            isPublic: this.state.isPublic,
-        }*/
-
-        //console.log(bottle);
         e.preventDefault();
         fetch("https://api.kychiu.me/v1/ocean/ocean", {
             method: "POST",
@@ -146,7 +57,7 @@ export default class Encouragement extends Component {
             body: JSON.stringify(
                 {
                     emotion: this.state.emotion,
-                    exercise: this.state.exercise,
+                    exercise: 2,
                     body: this.state.body,
                     tags: this.state.tags,
                     isPublic: this.state.isPublic
@@ -172,7 +83,6 @@ export default class Encouragement extends Component {
         }, () => {
             console.log("empty", this.state);
         });
-
     }
 
     postBottle() {
@@ -198,7 +108,7 @@ export default class Encouragement extends Component {
                     body:
                     {
                         emotion: this.state.emotion,
-                        exercise: this.state.exercise,
+                        exercise: 2,
                         body: this.state.body,
                         tags: this.state.tags,
                         isPublic: this.state.isPublic
