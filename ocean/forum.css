@@ -68,9 +68,9 @@ body {
     border-radius: 3px;
 }
 
-#close-bottle {
+#ind-nav {
+    margin-top: 10px;
+    width: 78%;
+    margin-right: 10px;
     position: fixed;
-    float: right;
-    margin-left: 40%;
-    margin-top: 1%;
 }
