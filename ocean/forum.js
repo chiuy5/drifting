@@ -9,6 +9,7 @@ const OCEAN = document.querySelector("#ocean");
 const ALL_TAGS = document.querySelector("#allTags");
 const FILTERED_TAGS = document.querySelector("#filteredTags");
 const INDBOTTLE = document.querySelector("#individual-bottle");
+const BOTTLEBODY = document.querySelector("#bottle-body");
 const CLOSEBOTTLE = document.querySelector("#close-bottle");
 
 const EPQ = ["What happened?", "Could the situation be worse than it is? And how so?", "What are some factors that contributed to the situation?", "What factors in the situation are in your control?", "Can you brainstorm solutions you can do to address your situation?", "How do you feel now?"];
@@ -36,6 +37,10 @@ CLEAR_SEARCH_BUTTON.addEventListener("click", function (event) {
     searchTags();
 });
 
+CLOSEBOTTLE.addEventListener("click", function(event) {
+    event.preventDefault();
+    INDBOTTLE.style.display = "none";
+}) 
 
 function searchTags() {
     fetch(API + "?tags="+prepareQueryString(), {
@@ -139,6 +144,7 @@ function bodyToString(currBody, exercise) {
 function getBottle(bottle) {
     let cardHolder = document.createElement("div");
     cardHolder.className = "col-sm-6 col-md-4 col-lg-3 d-flex";
+    cardHolder.id = "bottle";
 
     let card = document.createElement("div");
     card.className = "card";
@@ -146,6 +152,7 @@ function getBottle(bottle) {
 
     let cardContent = document.createElement("div");
     cardContent.className = "card-block p-3";
+    cardContent.id = "bottle-text"; 
     
     // get the tags
     let currTags = tagsToString(bottle.tags);
@@ -166,35 +173,32 @@ function getBottle(bottle) {
     let text = document.createElement("div");
     text.innerHTML = body;
 
-
-
-
     cardContent.appendChild(tags);
     cardContent.appendChild(emotion);
     cardContent.appendChild(exercise);
     cardContent.appendChild(createdAt);
     cardContent.appendChild(text);
-
-    let cardContentCopy = cardContent;
-
-    let readmore = document.createElement("button");
-    readmore.className="read-more";
-    readmore.innerHTML = "Read More";
-    readmore.addEventListener("click", function (event) {
-        INDBOTTLE.style.display = "block";
-        INDBOTTLE.innerHTML = "";
-        INDBOTTLE.appendChild(cardContentCopy);
-
-        CLOSEBOTTLE.addEventListener("click", function(event) {
-            event.preventDefault();
-            INDBOTTLE.style.display = "none";
-        }) 
-        
-    });
-
+    
 
     card.appendChild(cardContent);
-    card.appendChild(readmore);
+    let cardContentCopy = cardContent.cloneNode(true);
+
+    let readmore = document.createElement("button");
+    readmore.className="read-more btn btn-info";
+    readmore.innerHTML = "Read More";
+    readmore.addEventListener("click", function (event) {
+        event.preventDefault();
+        
+        INDBOTTLE.style.display = "block";
+        BOTTLEBODY.innerHTML = "";
+        BOTTLEBODY.appendChild(cardContentCopy);
+    });
+
+    let overlay = document.createElement("div");
+    overlay.id = "overlay";
+    overlay.appendChild(readmore);
+
+    card.appendChild(overlay);
     cardHolder.appendChild(card);
 
     OCEAN.appendChild(cardHolder);
