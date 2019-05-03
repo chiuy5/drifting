@@ -1,10 +1,15 @@
 #nav-bar {
-    background-image: linear-gradient(#D6E9FF, rgba(189, 221, 255, 0.62));
+    background-image: linear-gradient(#D6E9FF, rgb(189, 222, 255));
     color: white
 }
 
 h1 {
     padding-top: 20px;
+    color: white;
+}
+
+h1 :hover {
+    color: white;
 }
 
 body {
