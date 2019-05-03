@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c1e210e3af86f4680f478281abd8ad50",
+    "revision": "4acb222fcbdf3de0290e1976b179d278",
     "url": "/drifting/drifing/build/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/drifting/drifing/build/static/css/2.22a7d4ef.chunk.css"
   },
   {
-    "revision": "a8ec4a16979f2a215eb0",
+    "revision": "a074fbe6ab556cebabd7",
     "url": "/drifting/drifing/build/static/css/main.4889217a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/drifting/drifing/build/static/js/2.34d7aed8.chunk.js"
   },
   {
-    "revision": "a8ec4a16979f2a215eb0",
-    "url": "/drifting/drifing/build/static/js/main.04758c2a.chunk.js"
+    "revision": "a074fbe6ab556cebabd7",
+    "url": "/drifting/drifing/build/static/js/main.4131c8e0.chunk.js"
   },
   {
     "revision": "804bd064212d77ee9994",

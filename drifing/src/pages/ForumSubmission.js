@@ -233,7 +233,7 @@ export default class ForumSubmission extends Component {
                 <section id="child">
                     <div className="intro">
                         <div id="nav-links">
-                            <Link to="/">Home</Link> | <Link to="/processing">Emotional Processing</Link> | <Link to="/encourage">Encourage</Link>
+                            <Link to="/">Home</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a> | <Link to="/processing">Emotional Processing</Link> | <Link to="/encourage">Encourage</Link>
                         </div>
 
 
