@@ -12,7 +12,14 @@ const INDBOTTLE = document.querySelector("#individual-bottle");
 const BOTTLEBODY = document.querySelector("#bottle-body");
 const CLOSEBOTTLE = document.querySelector("#close-bottle");
 
-const EPQ = ["What happened?", "Could the situation be worse than it is? And how so?", "What are some factors that contributed to the situation?", "What factors in the situation are in your control?", "Can you brainstorm solutions you can do to address your situation?", "How do you feel now?"];
+const EPQ = [
+"What happened?",
+"", 
+"Could the situation be worse than it is? And how so?",
+"What are some factors that contributed to the situation?",
+"What factors in the situation are in your control?",
+"Can you brainstorm solutions you can do to address your situation?",
+"How do you feel now?"];
 
 
 function handleError(error) {
@@ -123,9 +130,9 @@ function bodyToString(currBody, exercise) {
 
         
         if (!exercise  || exercise === "1") {
-            for (let i = 0; i < currBody.length; i++) {
+            for (let i = 0; i < EPQ.length; i++) {
                 if (currBody[i].length != 0) {
-                    convertedBody = convertedBody + "<b>" + EPQ[i] + "</b> <br />" + currBody[i] + " <br /><br />"
+                    convertedBody = convertedBody + "<b>"  + EPQ[i] + "</b> <br />" + currBody[i] + " <br /><br />"
                 }
             }
         } else {
