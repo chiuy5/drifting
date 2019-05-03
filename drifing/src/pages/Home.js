@@ -19,7 +19,7 @@ export default class Home extends Component {
 
                     <div id="nav-link">
                         {/*<a href="/processing">Emotional Processing </a> | <a href="/encourage">Encourage</a>*/}
-                        {/*<Link to="/processing">Explore</Link>*/} Explore | <Link to="/exercise">Reflect</Link>
+                        <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a> | <Link to="/exercise">Reflect</Link>
                     </div>
 
                 </div>
