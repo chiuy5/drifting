@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './Encouragement.css';
+/* import './Encouragement.css'; */
+import './ForumSubmission.css';
 import 'bootstrap/dist/css/bootstrap.css';
 /*import { Button, Form, FormControl, FormCheck } from 'react-bootstrap';
 import { Card, CardText, CardBody, CardTitle } from 'reactstrap';
@@ -132,81 +133,82 @@ export default class Encouragement extends Component {
 
     render() {
         return (
-            <div className="container" id="exercise">
+            <div className="container">
+                <div id="nav-links">
+                    <Link to="/">Home</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a> | <Link to="/processing">Emotional Processing</Link> | <Link to="/encourage">Encourage</Link>
+                </div>
+
+                <div className="container" id="exercise">
 
 
-                <section id="child">
-                    <div className="intro">
-                        <div id="nav-links">
-                        <Link to="/">Home</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a> | <Link to="/processing">Emotional Processing</Link> | <Link to="/encourage">Encourage</Link>
-                        </div>
+                    <section className="child">
+                        <div className="intro">
 
-                        <h1>Encouraging Bottle</h1>
-                        <br />
-                        <div id="description">
-                            <p>Share an encouraging message. It can be advice, a resource, a personal experience, or words of comfort</p>
 
-                            <div id="guide">
-                                Be empathetic<br />
-                                Acknowledge, but not minimize, other's emotions<br />
-                                Don't feel pressure to have to talk<br />
-                            </div>
-
+                            <h1>Encouraging Bottle</h1>
                             <br />
-                            <br />
-                            <p>Scroll or Swipe Down to Continue</p>
-                            <h2>↓</h2>
+                            <div id="description">
+                                <p>Share an encouraging message. It can be advice, a resource, a personal experience, or words of comfort</p>
 
-                        </div>
-                    </div>
-                </section>
+                                <div id="guide">
+                                    Be empathetic<br />
+                                    Acknowledge, but not minimize, other's emotions<br />
+                                    Don't feel pressure to have to talk<br />
+                                </div>
+                                <br />
+                                <p>Go right to continue → </p>
 
 
-                <section id="child">
-                    <form>
-
-                        <div id="section">
-                            <div className="form-group">
-                                <label htmlFor="exampleFormControlTextarea1">Write some Encouragement</label>
-                                <textarea className="form-control"
-                                    name="0"
-                                    value={this.state.body[0]}
-                                    onChange={(event) => { this.handleQuestion(event) }}
-                                    id="exampleFormControlTextarea1"
-                                    rows="3"
-                                    placeholder="Write something here..."
-                                    aria-label="some description texts">
-                                </textarea>
                             </div>
                         </div>
+                    </section>
 
-                        <div id="section">
-                            <div className="form-group">
-                                <label htmlFor="formGroupExampleInput">Tags</label>
-                                <input type="text" className="form-control"
-                                    name="tags"
-                                    value={this.state.tags}
-                                    onChange={(event) => { this.handleChange(event) }}
-                                    id="formGroupExampleInput"
-                                    placeholder="Tag your bottle..."
-                                    aria-label="Tag your bottle"
-                                />
+
+                    <section className="child">
+                        <form>
+
+                            <div id="section">
+                                <div className="form-group">
+                                    <label htmlFor="exampleFormControlTextarea1">Write some Encouragement</label>
+                                    <textarea className="form-control"
+                                        name="0"
+                                        value={this.state.body[0]}
+                                        onChange={(event) => { this.handleQuestion(event) }}
+                                        id="text-box"
+                                        rows="3"
+                                        placeholder="Write something here..."
+                                        aria-label="some description texts">
+                                    </textarea>
+                                </div>
                             </div>
-                        </div>
-                    </form>
 
-                    <button className="btn btn-primary mr-2" onClick={(e) => this.addBottle(e)}>
-                        Public
+                            <div id="section">
+                                <div className="form-group">
+                                    <label htmlFor="formGroupExampleInput">Tags</label>
+                                    <input type="text" className="form-control"
+                                        name="tags"
+                                        value={this.state.tags}
+                                        onChange={(event) => { this.handleChange(event) }}
+                                        id="text-box"
+                                        placeholder="Tag your bottle..."
+                                        aria-label="Tag your bottle"
+                                    />
+                                </div>
+                            </div>
+                        </form>
+
+                        <button className="btn btn-primary mr-2" onClick={(e) => this.addBottle(e)}>
+                            Public
                 </button>
-                    <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
-                        Only I Can See
+                        <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
+                            Only I Can See
                 </button>
-                    <button className="btn btn-primary mr-2" onClick={() => this.disposeBottle()}>
-                        Dispose
+                        <button className="btn btn-primary mr-2" onClick={() => this.disposeBottle()}>
+                            Dispose
                 </button>
-                </section>
+                    </section>
+                </div>
             </div>
-
         );
     }
 }
