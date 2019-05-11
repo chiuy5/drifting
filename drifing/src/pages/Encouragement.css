@@ -1,21 +1,14 @@
-/* body {
+ body {
   background-image: linear-gradient(rgba(189, 221, 255, 0.62),  #e2bbff);
   background-repeat: no-repeat;
   background-attachment: fixed;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
   color: #7A6085;
   padding: 20px;
-  overflow: scroll;
-}
-
-#section {
-    padding-top: 30px;
+  overflow: hidden;
 }
 
 .Encouragement {
@@ -34,25 +27,37 @@
 }
 
 #nav-links {
-    margin-top: -20px;
     font-size: 10pt;
-    margin-bottom: 10%;
-}
-
-#child {
-    height: 100vh;
-    scroll-snap-align: center;
-    scroll-snap-destination: 50% 50%;
-    position: relative;
-    padding-top: 20vh; 
 }
 
 #exercise {
     background: rgba(red, green, blue, 0);
-    overflow: scroll;
-    height: 100vh;
-    scroll-snap-type: mandatory;
-    scroll-snap-points-y: repeat(100vh);
-    scroll-snap-type: y mandatory;
+    width: 100vw;
     color: #7A6085;
-} */
+    overflow-y: hidden;
+    height: 80vh;
+
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    align-items: baseline;
+    justify-content: space-between;
+
+    scroll-snap-type: mandatory;
+    scroll-snap-points-x: repeat(300px);
+    scroll-snap-type: x mandatory;
+}
+
+.child {
+    width: 100%;
+    margin: 0 auto 0 auto;
+    flex: 0 0 auto;
+    padding-top: 10vh;
+    scroll-snap-align: start;
+    align-self: flex-start;
+}
+
+#text-box {
+    width: 75%;
+    margin: auto;
+}

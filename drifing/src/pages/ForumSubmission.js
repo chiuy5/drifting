@@ -82,6 +82,7 @@ export default class ForumSubmission extends Component {
 
     scrollLeft = (e) => {
         e.preventDefault();
+        document.dispatchEvent(new KeyboardEvent("keydown", { key: "37", char: undefined, shiftKey: false }));
         /*document.getElementById("exercise").scrollRight += 300;*/
         /*let event = document.createEvent("KeyboardEvent");
         event.initKeyboardEvent("keyleft", false, false);*/
@@ -260,18 +261,14 @@ export default class ForumSubmission extends Component {
                                 <br />
                                 <p>Go through the following exercise to sort out what's on your mind</p>
                                 <p>You are free to go at your own pace and skip any questions you want</p>
+                                <br />
+                                <p>Go right to continue → </p>
                             </div>
 
                         </div>
-
-                        <div id="buttons">
-                            <button id="right-button" className="btn btn-info mr-2" onClick={(e) => this.scrollRight(e)}>
-                                →
-                         </button>
-                        </div>
                     </section>
 
-                    <section className="child" id="q-1">
+                    <section className="child">
                         <label>(1/7) How are you feeling right now?</label>
                         <br />
                         <div className="btn-group btn-group-toggle" data-toggle="buttons">
@@ -322,17 +319,17 @@ export default class ForumSubmission extends Component {
                         </label>
                         </div>
 
-                        <div id="buttons">
+{/*                         <div id="buttons">
                         <button id="left-button" className="btn btn-info mr-2" onClick={(e) => this.scrollLeft(e)}>
                             ←
                         </button>
                         <button id="right-button" className="btn btn-info mr-2" onClick={(e) => this.scrollRight(e)}>
                             →
                         </button>
-                    </div>
+                    </div> */}
                     </section>
 
-                    <section className="child" id="q-2">
+                    <section className="child">
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1">(2/7) What happened?</label>
                             <textarea id="text-box" className="form-control"
@@ -345,17 +342,9 @@ export default class ForumSubmission extends Component {
                                 aria-label="some description texts">
                             </textarea>
                         </div>
-                        <div id="buttons">
-                            <button id="left-button" className="btn btn-info mr-2" onClick={(e) => this.scrollLeft(e)}>
-                                ←
-                            </button>
-                            <button id="right-button" className="btn btn-info mr-2" onClick={(e) => this.scrollRight(e)}>
-                                →
-                            </button>
-                        </div>
                     </section>
 
-                    <section className="child" id="q-3">
+                    <section className="child">
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1">(3/7) Could the situation be worse than it is? And how so?</label>
                             <textarea id="text-box" className="form-control"
@@ -368,17 +357,9 @@ export default class ForumSubmission extends Component {
                                 aria-label="some description texts">
                             </textarea>
                         </div>
-                        <div id="buttons">
-                        <button id="left-button" className="btn btn-info mr-2" onClick={(e) => this.scrollLeft(e)}>
-                            ←
-                        </button>
-                        <button id="right-button" className="btn btn-info mr-2" onClick={(e) => this.scrollRight(e)}>
-                            →
-                        </button>
-                    </div>
                     </section>
 
-                    <section className="child" id="q-4">
+                    <section className="child">
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (4/7) What are some factors that contributed to the situation?</label>
                             <textarea id="text-box" className="form-control"
@@ -392,17 +373,9 @@ export default class ForumSubmission extends Component {
 
                             </textarea>
                         </div>
-                        <div id="buttons">
-                        <button id="left-button" className="btn btn-info mr-2" onClick={(e) => this.scrollLeft(e)}>
-                            ←
-                        </button>
-                        <button id="right-button" className="btn btn-info mr-2" onClick={(e) => this.scrollRight(e)}>
-                            →
-                        </button>
-                    </div>
                     </section>
 
-                    <section className="child" id="q-5">
+                    <section className="child">
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (5/7) What factors in the situation are in your control?</label>
                             <textarea id="text-box" className="form-control"
@@ -415,17 +388,9 @@ export default class ForumSubmission extends Component {
                                 aria-label="some description texts">
                             </textarea>
                         </div>
-                        <div id="buttons">
-                        <button id="left-button" className="btn btn-info mr-2" onClick={(e) => this.scrollLeft(e)}>
-                            ←
-                        </button>
-                        <button id="right-button" className="btn btn-info mr-2" onClick={(e) => this.scrollRight(e)}>
-                            →
-                        </button>
-                    </div>
                     </section>
 
-                    <section className="child" id="q-6">
+                    <section className="child">
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (6/7) Can you brainstorm solutions you can do to address your situation?</label>
                             <textarea id="text-box" className="form-control"
@@ -438,31 +403,15 @@ export default class ForumSubmission extends Component {
                                 aria-label="some description texts">
                             </textarea>
                         </div>
-                        <div id="buttons">
-                        <button id="left-button" className="btn btn-info mr-2" onClick={(e) => this.scrollLeft(e)}>
-                            ←
-                        </button>
-                        <button id="right-button" className="btn btn-info mr-2" onClick={(e) => this.scrollRight(e)}>
-                            →
-                        </button>
-                    </div>
                     </section>
 
-                    <section className="mindful col" className="child" >
-                        <p> Take some time to complete this mindfulness exercise or scroll down to skip </p>
+                    <section className="child" id="mindfulness">
+                        <p> Take some time to complete this mindfulness exercise</p> 
+                        <p>Or go right to skip → </p>
                         <Mindfulness />
-                        <div id="buttons">
-                        <button id="left-button" className="btn btn-info mr-2" onClick={(e) => this.scrollLeft(e)}>
-                            ←
-                        </button>
-                        <button id="right-button" className="btn btn-info mr-2" onClick={(e) => this.scrollRight(e)}>
-                            →
-                        </button>
-                    </div>
-
                     </section>
 
-                    <section className="child" id="q-7">
+                    <section className="child">
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (7/7) How do you feel now?</label>
                             <textarea id="text-box" className="form-control"
@@ -489,10 +438,6 @@ export default class ForumSubmission extends Component {
 
 
                         <div id="buttons">
-
-                        <button id="left-button" className="btn btn-info mr-2" onClick={(e) => this.scrollLeft(e)}>
-                                ←
-                            </button>
                             <button className="btn btn-primary mr-2" onClick={(e) => this.addBottle(e)}>
                                 Make Public
                          </button>
