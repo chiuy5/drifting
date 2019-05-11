@@ -23,7 +23,7 @@ body {
 }
 
 html, body {
-
+    scroll-behavior: smooth;
 }
 
 #exercise {
@@ -34,11 +34,16 @@ html, body {
     overflow-y: hidden;
     white-space: nowrap; */
     overflow-y: hidden;
+    height: 80vh;
 
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     align-items: flex-start;
+
+    scroll-snap-type: mandatory;
+    scroll-snap-points-x: repeat(300px);
+    scroll-snap-type: x mandatory;
 }
 
 .child {
@@ -46,6 +51,8 @@ html, body {
     margin: auto;
     flex: 0 0 auto;
     padding-top: 10vh;
+    /*scroll-snap-align: center;*/
+    scroll-snap-align: start;
 }
 
 #text-box {
