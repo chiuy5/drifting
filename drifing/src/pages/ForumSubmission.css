@@ -47,7 +47,6 @@ html, body {
     width: 100%;
     margin: 0 auto 0 auto;
     flex: 0 0 auto;
-    padding-top: 10vh;
     scroll-snap-align: start;
     align-self: flex-start;
 }
@@ -68,4 +67,5 @@ html, body {
 
 #nav-links {
     font-size: 10pt;
+    margin-bottom: 10px;
 }
