@@ -7,8 +7,6 @@ body {
   background-image: linear-gradient(rgba(189, 221, 255, 0.62),  #e2bbff);
   background-repeat: no-repeat;
   background-attachment: fixed;
-
-  
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
@@ -31,17 +29,29 @@ html, body {
 #exercise {
     background: rgba(red, green, blue, 0);
     width: 100vw;
-    color: #7A6085;    
+    color: #7A6085;
+/*     overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap; */
+    overflow-y: hidden;
+
     display: flex;
-    flex-direction: row;
-    
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    align-items: flex-start;
 }
 
-#child {
-    flex: 1;
-    padding-top: 0;
+.child {
+    width: 100%;
+    margin: auto;
+    flex: 0 0 auto;
+    padding-top: 10vh;
 }
 
+#text-box {
+    width: 75%;
+    margin: auto;
+}
 
 #buttons {
     margin-bottom: 25vh;
@@ -54,4 +64,9 @@ html, body {
 
 #nav-links {
     font-size: 10pt;
+}
+
+.mindfulness {
+    width: 75%;
+    margin: auto;
 }

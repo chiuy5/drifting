@@ -233,7 +233,7 @@ export default class ForumSubmission extends Component {
                 </div>
 
                 <form id="exercise" className="container">
-                    <section id="child" >
+                    <section className="child" >
                         <div className="intro">
 
 
@@ -253,7 +253,8 @@ export default class ForumSubmission extends Component {
                         </div>
                     </section>
 
-                    <section id="child" >
+                    <section className="child" >
+                        <div id="question1">
                         <label>(1/7) How are you feeling right now?</label>
                         <br />
                         <div className="btn-group btn-group-toggle" data-toggle="buttons">
@@ -303,16 +304,17 @@ export default class ForumSubmission extends Component {
                                 Awful
                         </label>
                         </div>
+                        </div>
                     </section>
 
-                    <section id="child" >
+                    <section className="child" >
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1">(2/7) What happened?</label>
-                            <textarea className="form-control"
+                            <textarea id="text-box" className="form-control"
                                 name="0"
                                 value={this.state.body[0]}
                                 onChange={(event) => { this.handleQuestion(event) }}
-                                id="exampleFormControlTextarea1"
+                       
                                 rows="3"
                                 placeholder="Write about something on your mind (for example: I failed my exam) ..."
                                 aria-label="some description texts">
@@ -320,14 +322,14 @@ export default class ForumSubmission extends Component {
                         </div>
                     </section>
 
-                    <section id="child" >
+                    <section className="child" >
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1">(3/7) Could the situation be worse than it is? And how so?</label>
-                            <textarea className="form-control"
+                            <textarea id="text-box" className="form-control"
                                 name="2"
                                 value={this.state.body[2]}
                                 onChange={(event) => { this.handleQuestion(event) }}
-                                id="exampleFormControlTextarea1"
+                                
                                 rows="3"
                                 placeholder="Think about what could be the worse case scenario for your situation (i.e. I slept through my exam) ..."
                                 aria-label="some description texts">
@@ -335,14 +337,14 @@ export default class ForumSubmission extends Component {
                         </div>
                     </section>
 
-                    <section id="child" >
+                    <section className="child" >
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (4/7) What are some factors that contributed to the situation?</label>
-                            <textarea className="form-control"
+                            <textarea id="text-box" className="form-control"
                                 name="3"
                                 value={this.state.body[3]}
                                 onChange={(event) => { this.handleQuestion(event) }}
-                                id="exampleFormControlTextarea1"
+                                
                                 rows="3"
                                 placeholder="There may be outside factors to consider that have you feel this way (i.e. I didn't get enough sleep)"
                                 aria-label="some description texts">
@@ -351,14 +353,14 @@ export default class ForumSubmission extends Component {
                         </div>
                     </section>
 
-                    <section id="child" >
+                    <section className="child" >
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (5/7) What factors in the situation are in your control?</label>
-                            <textarea className="form-control"
+                            <textarea id="text-box" className="form-control"
                                 name="4"
                                 value={this.state.body[4]}
                                 onChange={(event) => { this.handleQuestion(event) }}
-                                id="exampleFormControlTextarea1"
+                                
                                 rows="3"
                                 placeholder="Think about the things you put for the previous prompt and which of those things you can address"
                                 aria-label="some description texts">
@@ -366,14 +368,14 @@ export default class ForumSubmission extends Component {
                         </div>
                     </section>
 
-                    <section id="child">
+                    <section className="child">
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (6/7) Can you brainstorm solutions you can do to address your situation?</label>
-                            <textarea className="form-control"
+                            <textarea id="text-box" className="form-control"
                                 name="5"
                                 value={this.state.body[5]}
                                 onChange={(event) => { this.handleQuestion(event) }}
-                                id="exampleFormControlTextarea1"
+                                
                                 rows="3"
                                 placeholder="Think of some resources you can use or actions you can do"
                                 aria-label="some description texts">
@@ -381,7 +383,7 @@ export default class ForumSubmission extends Component {
                         </div>
                     </section>
 
-                    <section className="mindful col" id="child" >
+                    <section className="mindful col" className="child" >
                         {/*<br />
                         <p> [ ** Will add a Mindfulness exercise ** ]</p>
                         <br />*/}
@@ -393,14 +395,14 @@ export default class ForumSubmission extends Component {
 
                     </section>
 
-                    <section id="child" >
+                    <section className="child" >
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (7/7) How do you feel now?</label>
-                            <textarea className="form-control"
+                            <textarea id="text-box" className="form-control"
                                 name="6"
                                 value={this.state.body[6]}
                                 onChange={(event) => { this.handleQuestion(event) }}
-                                id="exampleFormControlTextarea1"
+                                
                                 rows="3"
                                 aria-label="some description texts">
                             </textarea>
@@ -408,11 +410,11 @@ export default class ForumSubmission extends Component {
 
                         <div className="form-group">
                             <label htmlFor="formGroupExampleInput">Tags</label>
-                            <input type="text" className="form-control"
+                            <input type="text" id="text-box" className="form-control"
                                 name="tags"
                                 value={this.state.tags}
                                 onChange={(event) => { this.handleChange(event) }}
-                                id="formGroupExampleInput"
+                                id="text-box"
                                 placeholder="Tags for your bottle"
                                 aria-label="Tags for your bottle"
                             />

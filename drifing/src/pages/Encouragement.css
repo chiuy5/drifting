@@ -1,13 +1,4 @@
-body {
-      /* Code for the gradient */
-  /* Source: https://www.quackit.com/css/color/tools/css_gradient_generator.cfm */
-  /*background: -webkit-gradient(linear, left bottom, right top, color-stop(0, #b6ffea), color-stop(1, #e2bbff));
-  background: -webkit-linear-gradient(bottom left, #b6ffea 0%, #e2bbff 100%);
-  background: -moz-linear-gradient(bottom left, #b6ffea 0%, #e2bbff 100%);
-  background: -o-linear-gradient(bottom left, #b6ffea 0%, #e2bbff 100%);
-  background: -ms-linear-gradient(bottom left, #b6ffea 0%, #e2bbff 100%);
-  background: linear-gradient(to top right, #b6ffea 0%, #e2bbff 100%);*/
-
+/* body {
   background-image: linear-gradient(rgba(189, 221, 255, 0.62),  #e2bbff);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -64,4 +55,4 @@ body {
     scroll-snap-points-y: repeat(100vh);
     scroll-snap-type: y mandatory;
     color: #7A6085;
-}
+} */
