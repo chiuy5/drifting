@@ -227,33 +227,33 @@ export default class ForumSubmission extends Component {
 
 
 
-            <div className="container" id="exercise">
+            <div className="container">
+                <div id="nav-links">
+                    <Link to="/">Home</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a> | <Link to="/processing">Emotional Processing</Link> | <Link to="/encourage">Encourage</Link>
+                </div>
+
+                <form id="exercise" className="container">
+                    <section id="child" >
+                        <div className="intro">
 
 
-                <section id="child">
-                    <div className="intro">
-                        <div id="nav-links">
-                            <Link to="/">Home</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a> | <Link to="/processing">Emotional Processing</Link> | <Link to="/encourage">Encourage</Link>
+                            <h1>New Bottle</h1>
+
+                            <div id="description">
+                                <br />
+                                <p>Go through the following exercise to sort out what's on your mind</p>
+                                <p>You are free to go at your own pace and skip any questions you want</p>
+                                <br />
+                                <br />
+                                <p>Scroll or Swipe Down to Continue</p>
+                                <h2>↓</h2>
+
+                            </div>
+
                         </div>
+                    </section>
 
-
-                        <h1>New Bottle</h1>
-
-                        <div id="description">
-                            <br />
-                            <p>Go through the following exercise to sort out what's on your mind</p>
-                            <p>You are free to go at your own pace and skip any questions you want</p>
-                            <br />
-                            <br />
-                            <p>Scroll or Swipe Down to Continue</p>
-                            <h2>↓</h2>
-
-                        </div>
-
-                    </div>
-                </section>
-                <form>
-                    <section id="child">
+                    <section id="child" >
                         <label>(1/7) How are you feeling right now?</label>
                         <br />
                         <div className="btn-group btn-group-toggle" data-toggle="buttons">
@@ -305,7 +305,7 @@ export default class ForumSubmission extends Component {
                         </div>
                     </section>
 
-                    <section id="child">
+                    <section id="child" >
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1">(2/7) What happened?</label>
                             <textarea className="form-control"
@@ -320,7 +320,7 @@ export default class ForumSubmission extends Component {
                         </div>
                     </section>
 
-                    <section id="child">
+                    <section id="child" >
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1">(3/7) Could the situation be worse than it is? And how so?</label>
                             <textarea className="form-control"
@@ -335,7 +335,7 @@ export default class ForumSubmission extends Component {
                         </div>
                     </section>
 
-                    <section id="child">
+                    <section id="child" >
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (4/7) What are some factors that contributed to the situation?</label>
                             <textarea className="form-control"
@@ -351,7 +351,7 @@ export default class ForumSubmission extends Component {
                         </div>
                     </section>
 
-                    <section id="child">
+                    <section id="child" >
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (5/7) What factors in the situation are in your control?</label>
                             <textarea className="form-control"
@@ -381,7 +381,7 @@ export default class ForumSubmission extends Component {
                         </div>
                     </section>
 
-                    <section class="mindful" id="child">
+                    <section className="mindful col" id="child" >
                         {/*<br />
                         <p> [ ** Will add a Mindfulness exercise ** ]</p>
                         <br />*/}
@@ -393,7 +393,7 @@ export default class ForumSubmission extends Component {
 
                     </section>
 
-                    <section id="child">
+                    <section id="child" >
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (7/7) How do you feel now?</label>
                             <textarea className="form-control"

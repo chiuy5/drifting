@@ -8,13 +8,10 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  padding: 20px;
 }
 
 .forumSubmission {
@@ -22,39 +19,28 @@ body {
 }
 
 ::-webkit-scrollbar {   
-    width: 0px;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
+    /*width: 10px;   Remove scrollbar space */
+    /* background: transparent;   Optional: just make scrollbar invisible */
 
 }
 
 html, body {
-    height: 100vh;
-    overflow: hidden;
+
 }
 
 #exercise {
     background: rgba(red, green, blue, 0);
-    overflow: scroll;
-    height: 100vh;
-    scroll-snap-type: mandatory;
-    scroll-snap-points-y: repeat(100vh);
-    scroll-snap-type: y mandatory;
-    color: #7A6085;
+    width: 100vw;
+    color: #7A6085;    
+    display: flex;
+    flex-direction: row;
+    
 }
 
 #child {
-    height: 100vh;
-    -webkit-scroll-snap-align: center;
-    scroll-snap-destination: 50% 50%;
-    position: relative;
-    padding-top: 20vh;
-
+    flex: 1;
+    padding-top: 0;
 }
-
-.mindful {
-    margin-top: -40px
-}
-
 
 
 #buttons {
@@ -63,11 +49,9 @@ html, body {
 
 #description {
     margin: auto;
-    width: 80%;
     font-size: 12pt;
 }
 
 #nav-links {
     font-size: 10pt;
-    margin-bottom: 40px;
 }
