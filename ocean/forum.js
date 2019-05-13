@@ -13,8 +13,7 @@ const BOTTLEBODY = document.querySelector("#bottle-body");
 const CLOSEBOTTLE = document.querySelector("#close-bottle");
 
 const EPQ = [
-"What happened?",
-"", 
+"What happened?", 
 "Could the situation be worse than it is? And how so?",
 "What are some factors that contributed to the situation?",
 "What factors in the situation are in your control?",
