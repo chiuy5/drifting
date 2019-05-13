@@ -348,7 +348,7 @@ export default class ForumSubmission extends Component {
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1">(3/7) Could the situation be worse than it is? And how so?</label>
                             <textarea id="text-box" className="form-control"
-                                name="2"
+                                name="1"
                                 value={this.state.body[1]}
                                 onChange={(event) => { this.handleQuestion(event) }}
 
@@ -363,7 +363,7 @@ export default class ForumSubmission extends Component {
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (4/7) What are some factors that contributed to the situation?</label>
                             <textarea id="text-box" className="form-control"
-                                name="3"
+                                name="2"
                                 value={this.state.body[2]}
                                 onChange={(event) => { this.handleQuestion(event) }}
 
@@ -379,7 +379,7 @@ export default class ForumSubmission extends Component {
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (5/7) What factors in the situation are in your control?</label>
                             <textarea id="text-box" className="form-control"
-                                name="4"
+                                name="3"
                                 value={this.state.body[3]}
                                 onChange={(event) => { this.handleQuestion(event) }}
 
@@ -394,7 +394,7 @@ export default class ForumSubmission extends Component {
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (6/7) Can you brainstorm solutions you can do to address your situation?</label>
                             <textarea id="text-box" className="form-control"
-                                name="5"
+                                name="4"
                                 value={this.state.body[4]}
                                 onChange={(event) => { this.handleQuestion(event) }}
 
@@ -415,7 +415,7 @@ export default class ForumSubmission extends Component {
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (7/7) How do you feel now?</label>
                             <textarea id="text-box" className="form-control"
-                                name="6"
+                                name="5"
                                 value={this.state.body[5]}
                                 onChange={(event) => { this.handleQuestion(event) }}
 
