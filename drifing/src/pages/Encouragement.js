@@ -114,7 +114,7 @@ export default class Encouragement extends Component {
                     method: "POST",
                     body:
                     {
-                        emotion: this.state.emotion,
+                        emotion: "+1",
                         exercise: 2,
                         body: this.state.body,
                         tags: this.state.tags,

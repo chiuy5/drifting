@@ -1,6 +1,7 @@
 #nav-bar {
     /*background-image: linear-gradient(#D6E9FF, rgb(189, 222, 255));*/
-    color: white
+    color: white;
+    background-image: linear-gradient(#FFFFFF, rgb(255, 255, 255));
 }
 
 h1 {
