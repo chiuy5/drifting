@@ -8,8 +8,9 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* font-size: calc(10px + 2vmin); */
+  font-size: 12pt;
+  color: black;
 }
 
 .forumSubmission {
