@@ -11,6 +11,7 @@ const FILTERED_TAGS = document.querySelector("#filteredTags");
 const INDBOTTLE = document.querySelector("#individual-bottle");
 const BOTTLEBODY = document.querySelector("#bottle-body");
 const CLOSEBOTTLE = document.querySelector("#close-bottle");
+const BOTTLEOVERLAY = document.querySelector("#body_overlay");
 
 const EPQ = [
 "What happened?", 
@@ -46,6 +47,7 @@ CLEAR_SEARCH_BUTTON.addEventListener("click", function (event) {
 CLOSEBOTTLE.addEventListener("click", function(event) {
     event.preventDefault();
     INDBOTTLE.style.display = "none";
+    BOTTLEOVERLAY.style.display = "none";
 }) 
 
 function searchTags() {
@@ -192,6 +194,7 @@ function getBottle(bottle) {
         event.preventDefault();
         
         INDBOTTLE.style.display = "block";
+        BOTTLEOVERLAY.style.display = "block";
         BOTTLEBODY.innerHTML = "";
         BOTTLEBODY.appendChild(cardContentCopy);
     });
