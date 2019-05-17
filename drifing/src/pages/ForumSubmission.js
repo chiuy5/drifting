@@ -172,11 +172,11 @@ export default class ForumSubmission extends Component {
             },
             body: JSON.stringify(
                 {
-                    emotion: this.state.emotion,
+                    emotion: "-1",
                     exercise: 1,
                     body: this.state.body,
                     tags: this.state.tags,
-                    isPublic: this.state.isPublic
+                    isPublic: true //this.state.isPublic
                 })
         }).then(res => {
             return res.json();

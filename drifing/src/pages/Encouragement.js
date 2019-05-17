@@ -13,9 +13,9 @@ export default class Encouragement extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            emotion: "",
+            emotion: "+1",
             exercise: "",
-            body: ["", "", "", "", "", "", ""],
+            body: [""],
             tags: "",
             isPublic: true,
         };
@@ -63,7 +63,7 @@ export default class Encouragement extends Component {
             },
             body: JSON.stringify(
                 {
-                    emotion: this.state.emotion,
+                    emotion: "+1",
                     exercise: 2,
                     body: this.state.body,
                     tags: this.state.tags,
@@ -84,7 +84,7 @@ export default class Encouragement extends Component {
         this.setState({
             emotion: "",
             exercise: "",
-            body: ["", "", "", "", "", "", ""],
+            body: [""],
             tags: "",
             isPublic: ""
         }, () => {
