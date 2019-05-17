@@ -16,20 +16,23 @@ export default class Crisis extends Component {
                 </div>
                 <div id="main">
                     <p>Thank you for reaching out</p>
-                    <br />
                     <p>However, we do not have the capabilities to help you directly at the moment.</p>
                     <p>Here are some resources to consider:</p>
                     <br />
 
-                    <h2>In Case of Emergency</h2>
-                    <p>If you feel like you are an immediate harm to yourself or others, please call 911 or go to your nearest emergency room. </p>
+                    <h4>In Case of Emergency</h4>
+                    <p>If you feel like you are an immediate harm to yourself or others,</p> 
+                    <p>please call 911 or go to your nearest emergency room. </p>
+                    <br />
                     <br />
 
-                    <h2>Here Are Some Reasoures In Seattle To Reach Out To</h2>
+                    <h4>Here Are Some Reasoures In Seattle To Reach Out To</h4>
+                    <p>[filler]</p>
                     <p>[filler]</p>
                     <br />
+                    <br />
 
-                    <h2>Remember</h2>
+                    <h4>Remember</h4>
                     <p>Don't be afraid to reach out to people you know. You are not alone.</p>
                 </div>
                 </div>

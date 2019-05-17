@@ -360,7 +360,7 @@ export default class ForumSubmission extends Component {
                                 onChange={(event) => { this.handleQuestion(event) }}
 
                                 rows="3"
-                                placeholder="Think about what could be the worse case scenario for your situation (i.e. I slept through my exam) ..."
+                                placeholder="Think about what could be the worse case scenario for your situation (i.e. I failed the course) ..."
                                 aria-label="some description texts">
                             </textarea>
                         </div>
@@ -375,7 +375,7 @@ export default class ForumSubmission extends Component {
                                 onChange={(event) => { this.handleQuestion(event) }}
 
                                 rows="3"
-                                placeholder="There may be outside factors to consider that have you feel this way (i.e. I didn't get enough sleep)"
+                                placeholder="There may be outside factors to consider that have you feel this way (i.e. I didn't get enough sleep, )"
                                 aria-label="some description texts">
 
                             </textarea>
@@ -438,7 +438,7 @@ export default class ForumSubmission extends Component {
                                 value={this.state.tags}
                                 onChange={(event) => { this.handleChange(event) }}
                                 id="text-box"
-                                placeholder="Tags for your bottle"
+                                placeholder="Tag your bottle"
                                 aria-label="Tags for your bottle"
                             />
                         </div>
