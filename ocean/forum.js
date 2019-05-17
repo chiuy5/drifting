@@ -126,11 +126,9 @@ function bodyToString(currBody, exercise) {
     let convertedBody = "";
     if (currBody && currBody.length != 0) {
 
-
-        
         if (!exercise  || exercise === "1") {
             for (let i = 0; i < EPQ.length; i++) {
-                if (currBody[i].length != 0) {
+                if (currBody[i] && currBody[i].length != 0) {
                     convertedBody = convertedBody + "<b>"  + EPQ[i] + "</b> <br />" + currBody[i] + " <br /><br />"
                 }
             }
@@ -141,8 +139,6 @@ function bodyToString(currBody, exercise) {
                 }
             });
         }
-
-
     }
     return convertedBody;
 }
@@ -221,11 +217,11 @@ function emotionCleaned(emotion) {
         case "-2":
           return "Awful";
         case "-1":
-          return "Bad";
+          return "Negative";
         case "0":
-           return "Ok";
+           return "Neutral";
          case "+1":
-           return "Good";
+           return "Positive";
          case "+2":
            return "Great";
       }
