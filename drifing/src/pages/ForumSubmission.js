@@ -21,11 +21,18 @@ export default class ForumSubmission extends Component {
             isPublic: true,
         };
 
+        this.routeChange = this.routeChange.bind(this);
         this.displayMessage = this.displayMessage.bind(this);
 
         //this.handleChange = this.handleChange.bind(this);
         //this.postBottle = this.postBottle.bind(this);
     }
+
+    routeChange() {
+        let path = "/ep_result";
+        this.props.history.push(path);
+    }
+
 
     // Add a method to handle changes to any input element
     handleChange(event) {
@@ -86,8 +93,8 @@ export default class ForumSubmission extends Component {
         /*document.getElementById("exercise").scrollRight += 300;*/
         /*let event = document.createEvent("KeyboardEvent");
         event.initKeyboardEvent("keyleft", false, false);*/
- /*        let evt = new KeyboardEvent('keyleft');
-        document.dispatchEvent(evt); */
+        /*        let evt = new KeyboardEvent('keyleft');
+               document.dispatchEvent(evt); */
     }
 
     scrollRight = (e) => {
@@ -174,11 +181,11 @@ export default class ForumSubmission extends Component {
         }).then(res => {
             return res.json();
         }).then((data) => {
-            console.log("bottle1", data);
+            console.log("bottle", data);
             this.clearState();
+            this.routeChange();
         }).catch((err, data) => {
             console.log(err);
-            console.log("bottle2", data);
         });
     }
 
@@ -217,7 +224,7 @@ export default class ForumSubmission extends Component {
                     method: "POST",
                     body:
                     {
-                        emotion: this.state.emotion,
+                        emotion: "-1",
                         exercise: this.state.exercise,
                         body: this.state.body,
                         tags: this.state.tags,
@@ -247,7 +254,7 @@ export default class ForumSubmission extends Component {
 
             <div className="container">
                 <div id="nav-links">
-                    <Link to="/">Home</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a> | <Link to="/processing">Emotional Processing</Link> | <Link to="/encourage">Encourage</Link>
+                    <Link to="/">Home</Link> | <Link to="/excercise">Express</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a>
                 </div>
 
                 <form id="exercise" className="container">
@@ -268,7 +275,7 @@ export default class ForumSubmission extends Component {
                         </div>
                     </section>
 
-                    <section className="child">
+{/*                     <section className="child">
                         <label>(1/7) How are you feeling right now?</label>
                         <br />
                         <div className="btn-group btn-group-toggle" data-toggle="buttons">
@@ -319,19 +326,19 @@ export default class ForumSubmission extends Component {
                         </label>
                         </div>
 
-{/*                         <div id="buttons">
+                                             <div id="buttons">
                         <button id="left-button" className="btn btn-info mr-2" onClick={(e) => this.scrollLeft(e)}>
                             ←
                         </button>
                         <button id="right-button" className="btn btn-info mr-2" onClick={(e) => this.scrollRight(e)}>
                             →
                         </button>
-                    </div> */}
-                    </section>
+                    </div> }
+                    </section> */}
 
                     <section className="child">
                         <div className="form-group">
-                            <label htmlFor="exampleFormControlTextarea1">(2/7) What happened?</label>
+                            <label htmlFor="exampleFormControlTextarea1">(1/6) What's on your mind?</label>
                             <textarea id="text-box" className="form-control"
                                 name="0"
                                 value={this.state.body[0]}
@@ -346,7 +353,7 @@ export default class ForumSubmission extends Component {
 
                     <section className="child">
                         <div className="form-group">
-                            <label htmlFor="exampleFormControlTextarea1">(3/7) Could the situation be worse than it is? And how so?</label>
+                            <label htmlFor="exampleFormControlTextarea1">(2/6) Could the situation be worse than it is? And how so?</label>
                             <textarea id="text-box" className="form-control"
                                 name="1"
                                 value={this.state.body[1]}
@@ -361,7 +368,7 @@ export default class ForumSubmission extends Component {
 
                     <section className="child">
                         <div className="form-group">
-                            <label htmlFor="exampleFormControlTextarea1"> (4/7) What are some factors that contributed to the situation?</label>
+                            <label htmlFor="exampleFormControlTextarea1"> (3/6) What are some factors that contributed to the situation?</label>
                             <textarea id="text-box" className="form-control"
                                 name="2"
                                 value={this.state.body[2]}
@@ -377,7 +384,7 @@ export default class ForumSubmission extends Component {
 
                     <section className="child">
                         <div className="form-group">
-                            <label htmlFor="exampleFormControlTextarea1"> (5/7) What factors in the situation are in your control?</label>
+                            <label htmlFor="exampleFormControlTextarea1"> (4/6) What factors in the situation are in your control?</label>
                             <textarea id="text-box" className="form-control"
                                 name="3"
                                 value={this.state.body[3]}
@@ -392,7 +399,7 @@ export default class ForumSubmission extends Component {
 
                     <section className="child">
                         <div className="form-group">
-                            <label htmlFor="exampleFormControlTextarea1"> (6/7) Can you brainstorm solutions you can do to address your situation?</label>
+                            <label htmlFor="exampleFormControlTextarea1"> (5/6) Can you brainstorm solutions you can do to address your situation?</label>
                             <textarea id="text-box" className="form-control"
                                 name="4"
                                 value={this.state.body[4]}
@@ -406,14 +413,14 @@ export default class ForumSubmission extends Component {
                     </section>
 
                     <section className="child" id="mindfulness">
-                        <p> Take some time to complete this mindfulness exercise</p> 
+                        <p> Take some time to complete this mindfulness exercise</p>
                         <p>Or go right to skip → </p>
                         <Mindfulness />
                     </section>
 
                     <section className="child">
                         <div className="form-group">
-                            <label htmlFor="exampleFormControlTextarea1"> (7/7) How do you feel now?</label>
+                            <label htmlFor="exampleFormControlTextarea1"> (6/6) How do you feel now?</label>
                             <textarea id="text-box" className="form-control"
                                 name="5"
                                 value={this.state.body[5]}
@@ -438,15 +445,15 @@ export default class ForumSubmission extends Component {
 
 
                         <div id="buttons">
-                            <button className="btn btn-primary mr-2" onClick={(e) => this.addBottle(e)}>
-                                Make Public
+                            <button className="btn btn-primary mr-2" onClick={(e) => {this.addBottle(e)}}>
+                                Post
                          </button>
-                            <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
+{/*                             <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
                                 Only I Can See
                          </button>
                             <button className="btn btn-primary mr-2" onClick={() => this.disposeBottle()}>
                                 Dispose
-                        </button>
+                        </button> */}
                         </div>
                     </section>
                 </form>

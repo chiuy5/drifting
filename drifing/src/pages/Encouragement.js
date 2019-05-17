@@ -24,6 +24,12 @@ export default class Encouragement extends Component {
 
         //this.handleChange = this.handleChange.bind(this);
         //this.postBottle = this.postBottle.bind(this);
+        this.routeChange = this.routeChange.bind(this);
+    }
+
+    routeChange() {
+        let path = "/en_result";
+        this.props.history.push(path);
     }
 
     // Add a method to handle changes to any input element
@@ -66,11 +72,11 @@ export default class Encouragement extends Component {
         }).then(res => {
             return res.json();
         }).then((data) => {
-            console.log("bottle1", data);
+            console.log("bottle", data);
             this.clearState();
+            this.routeChange();
         }).catch((err, data) => {
             console.log(err);
-            console.log("bottle2", data);
         });
     }
 
@@ -135,8 +141,8 @@ export default class Encouragement extends Component {
         return (
             <div className="container">
                 <div id="nav-links">
-                    <Link to="/">Home</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a> | <Link to="/processing">Emotional Processing</Link> | <Link to="/encourage">Encourage</Link>
-                </div>
+                <Link to="/">Home</Link> | <Link to="/excercise">Express</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a>
+            </div>
 
                 <div className="container" id="exercise">
 
@@ -198,14 +204,14 @@ export default class Encouragement extends Component {
                         </form>
 
                         <button className="btn btn-primary mr-2" onClick={(e) => this.addBottle(e)}>
-                            Public
+                            Post
                 </button>
-                        <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
+{/*                         <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
                             Only I Can See
                 </button>
                         <button className="btn btn-primary mr-2" onClick={() => this.disposeBottle()}>
                             Dispose
-                </button>
+                </button> */}
                     </section>
                 </div>
             </div>

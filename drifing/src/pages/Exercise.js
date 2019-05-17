@@ -12,7 +12,10 @@ export default class Exercise extends Component {
     render() {
         return (
             <div className="container">
-                <div id="front">
+                <div id="nav-links">
+                <Link to="/">Home</Link> | <Link to="/excercise">Express</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a>
+                </div>
+                <div id="main">
                     What would you like to do?
                     <br />
                     <br />
@@ -20,20 +23,10 @@ export default class Exercise extends Component {
                         {/*<a href="/processing">Emotional Processing </a> | <a href="/encourage">Encourage</a>*/}
                         <Link to="/processing">Emotional Processing</Link><br />
                         <Link to="/encourage">Encourage</Link><br />
-                        <br />
-                        <br />                    
-                        <br />
-                        <br />                    
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <Link to="/">Back to Home</Link><br />
                     </div>
 
                 </div>
             </div>
-
         );
     }
 }
