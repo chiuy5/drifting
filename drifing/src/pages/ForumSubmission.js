@@ -28,11 +28,28 @@ export default class ForumSubmission extends Component {
         //this.postBottle = this.postBottle.bind(this);
     }
 
-    routeChange() {
-        let path = "/ep_result";
+
+    routeChange(type) {
+        let path = ""
+        if (type === "dispose") {
+            path = "/ex_dispose";
+        } else {
+            path = "/ep_result";
+        }
         this.props.history.push(path);
     }
 
+/*     componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+    } */
+
+
+/*     handleScroll(event) {
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrolled = (winScroll / height) * 100;
+        document.getElementById("myBar").style.width = scrolled + "%";
+    } */
 
     // Add a method to handle changes to any input element
     handleChange(event) {
@@ -89,21 +106,27 @@ export default class ForumSubmission extends Component {
 
     scrollLeft = (e) => {
         e.preventDefault();
-        document.dispatchEvent(new KeyboardEvent("keydown", { key: "37", char: undefined, shiftKey: false }));
-        /*document.getElementById("exercise").scrollRight += 300;*/
+
+        /*I have no idea why .scrollRight += 300 doesn't work*/
+        document.getElementById("exercise").scrollLeft -= 600;
+
+        /*document.dispatchEvent(new KeyboardEvent("keydown", { key: "37", char: undefined, shiftKey: false }));*/
         /*let event = document.createEvent("KeyboardEvent");
         event.initKeyboardEvent("keyleft", false, false);*/
-        /*        let evt = new KeyboardEvent('keyleft');
+        /*let evt = new KeyboardEvent('keyleft');
                document.dispatchEvent(evt); */
     }
 
     scrollRight = (e) => {
         e.preventDefault();
-        /*document.getElementById("exercise").scrollLeft += 300;*/
-        let event = document.createEvent("KeyboardEvent");
-        event.initEvent("keyright", false, false);
+        document.getElementById("exercise").scrollLeft += 600;
+        /*let event = document.createEvent("KeyboardEvent");
+        event.initEvent("keyright", false, false);*/
 
     }
+
+
+
 
 
     // When the user click submit, the value change on title and description 
@@ -183,7 +206,7 @@ export default class ForumSubmission extends Component {
         }).then((data) => {
             console.log("bottle", data);
             this.clearState();
-            this.routeChange();
+            this.routeChange("post");
         }).catch((err, data) => {
             console.log(err);
         });
@@ -245,6 +268,7 @@ export default class ForumSubmission extends Component {
 
     disposeBottle() {
         this.clearState();
+        this.routeChange("dispose");
     }
 
     render() {
@@ -257,7 +281,13 @@ export default class ForumSubmission extends Component {
                     <Link to="/">Home</Link> | <Link to="/excercise">Express</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a>
                 </div>
 
+{/*                 <div class="progress-container">
+                         <div class="progress-bar" id="myBar"></div>
+                </div> */}
+
                 <form id="exercise" className="container">
+
+
                     <section className="child" >
                         <div className="intro">
 
@@ -269,7 +299,12 @@ export default class ForumSubmission extends Component {
                                 <p>Go through the following exercise to sort out what's on your mind</p>
                                 <p>You are free to go at your own pace and skip any questions you want</p>
                                 <br />
-                                <p>Go right to continue → </p>
+                            </div>
+
+                            <div id="buttons">
+                                <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e)}>
+                                    Continue →
+                                 </button>
                             </div>
 
                         </div>
@@ -327,10 +362,10 @@ export default class ForumSubmission extends Component {
                         </div>
 
                                              <div id="buttons">
-                        <button id="left-button" className="btn btn-info mr-2" onClick={(e) => this.scrollLeft(e)}>
+                        <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
                             ←
                         </button>
-                        <button id="right-button" className="btn btn-info mr-2" onClick={(e) => this.scrollRight(e)}>
+                        <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e)}>
                             →
                         </button>
                     </div> }
@@ -349,6 +384,15 @@ export default class ForumSubmission extends Component {
                                 aria-label="some description texts">
                             </textarea>
                         </div>
+
+                        <div id="buttons">
+                                <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
+                                    ←
+                                </button>
+                                <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e)}>
+                                    →
+                                 </button>
+                        </div>
                     </section>
 
                     <section className="child">
@@ -363,6 +407,15 @@ export default class ForumSubmission extends Component {
                                 placeholder="Think about what could be the worse case scenario for your situation (i.e. I failed the course) ..."
                                 aria-label="some description texts">
                             </textarea>
+                        </div>
+
+                        <div id="buttons">
+                                <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
+                                    ←
+                                </button>
+                                <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e)}>
+                                    →
+                                 </button>
                         </div>
                     </section>
 
@@ -380,6 +433,15 @@ export default class ForumSubmission extends Component {
 
                             </textarea>
                         </div>
+
+                        <div id="buttons">
+                                <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
+                                    ←
+                                </button>
+                                <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e)}>
+                                    →
+                                 </button>
+                        </div>
                     </section>
 
                     <section className="child">
@@ -394,6 +456,15 @@ export default class ForumSubmission extends Component {
                                 placeholder="Think about the things you put for the previous prompt and which of those things you can address"
                                 aria-label="some description texts">
                             </textarea>
+                        </div>
+
+                        <div id="buttons">
+                                <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
+                                    ←
+                                </button>
+                                <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e)}>
+                                    →
+                                 </button>
                         </div>
                     </section>
 
@@ -410,12 +481,31 @@ export default class ForumSubmission extends Component {
                                 aria-label="some description texts">
                             </textarea>
                         </div>
+
+                        <div id="buttons">
+                                <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
+                                    ←
+                                </button>
+                                <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e)}>
+                                    →
+                                 </button>
+                        </div>
                     </section>
 
                     <section className="child" id="mindfulness">
                         <p> Take some time to complete this mindfulness exercise</p>
-                        <p>Or go right to skip → </p>
+                        
                         <Mindfulness />
+
+                        <p>Or go right to skip → </p>
+                        <div id="buttons">
+                                <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
+                                    ←
+                                </button>
+                                <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e)}>
+                                    →
+                                 </button>
+                        </div>
                     </section>
 
                     <section className="child">
@@ -443,17 +533,19 @@ export default class ForumSubmission extends Component {
                             />
                         </div>
 
-
                         <div id="buttons">
+                            <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
+                                ←
+                            </button>
                             <button className="btn btn-primary mr-2" onClick={(e) => {this.addBottle(e)}}>
                                 Post
                          </button>
 {/*                             <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
                                 Only I Can See
-                         </button>
+                         </button>*/}
                             <button className="btn btn-primary mr-2" onClick={() => this.disposeBottle()}>
                                 Dispose
-                        </button> */}
+                        </button>
                         </div>
                     </section>
                 </form>

@@ -27,8 +27,13 @@ export default class Encouragement extends Component {
         this.routeChange = this.routeChange.bind(this);
     }
 
-    routeChange() {
-        let path = "/en_result";
+    routeChange(type) {
+        let path = ""
+        if (type === "dispose") {
+            path = "/ex_dispose";
+        } else {
+            path = "/en_result";
+        }
         this.props.history.push(path);
     }
 
@@ -53,6 +58,16 @@ export default class Encouragement extends Component {
         });
     }
 
+    scrollLeft = (e) => {
+        e.preventDefault();
+        document.getElementById("exercise").scrollLeft -= 600;
+    }
+
+    scrollRight = (e) => {
+        e.preventDefault();
+        document.getElementById("exercise").scrollLeft += 600;
+    }
+
 
     addBottle = (e) => {
         e.preventDefault();
@@ -74,7 +89,7 @@ export default class Encouragement extends Component {
         }).then((data) => {
             console.log("bottle", data);
             this.clearState();
-            this.routeChange();
+            this.routeChange("post");
         }).catch((err, data) => {
             console.log(err);
         });
@@ -135,6 +150,7 @@ export default class Encouragement extends Component {
 
     disposeBottle() {
         this.clearState();
+        this.routeChange("dispose");
     }
 
     render() {
@@ -162,9 +178,12 @@ export default class Encouragement extends Component {
                                     Don't feel pressure to have to talk<br />
                                 </div>
                                 <br />
-                                <p>Go right to continue → </p>
+                            </div>
 
-
+                            <div id="buttons">
+                                <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e)}>
+                                    Continue →
+                                 </button>
                             </div>
                         </div>
                     </section>
@@ -203,15 +222,21 @@ export default class Encouragement extends Component {
                             </div>
                         </form>
 
+
+                        <div id="buttons">
+                        <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
+                                ←
+                            </button>
                         <button className="btn btn-primary mr-2" onClick={(e) => this.addBottle(e)}>
                             Post
-                </button>
-{/*                         <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
+                         </button>
+                    {/* <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
                             Only I Can See
-                </button>
+                        </button> */}
                         <button className="btn btn-primary mr-2" onClick={() => this.disposeBottle()}>
                             Dispose
-                </button> */}
+                        </button>
+                        </div>
                     </section>
                 </div>
             </div>

@@ -13,6 +13,7 @@ import Great from "./pages/Great";
 import Crisis from "./pages/Crisis";
 import EPResult from "./pages/EPResult";
 import EncResult from "./pages/EncResult";
+import ExDispose from "./pages/ExDispose";
 
 class App extends Component {
 
@@ -29,6 +30,7 @@ class App extends Component {
             <Route path="/ep_result" component={EPResult} />
             <Route path="/en_result" component={EncResult} />
             <Route path="/excercise" component={Exercise} />
+            <Route path="/ex_dispose" component={ExDispose} />
           </Switch>
         </Router>
       </div>
