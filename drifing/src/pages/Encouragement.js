@@ -215,7 +215,7 @@ export default class Encouragement extends Component {
                                         value={this.state.tags}
                                         onChange={(event) => { this.handleChange(event) }}
                                         id="text-box"
-                                        placeholder="Tag your bottle"
+                                        placeholder="Tag your bottle (Seperate each tag by a comma)"
                                         aria-label="Tag your bottle"
                                     />
                                 </div>

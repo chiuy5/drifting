@@ -528,7 +528,7 @@ export default class ForumSubmission extends Component {
                                 value={this.state.tags}
                                 onChange={(event) => { this.handleChange(event) }}
                                 id="text-box"
-                                placeholder="Tag your bottle"
+                                placeholder="Tag your bottle (Seperate each tag by a comma)"
                                 aria-label="Tags for your bottle"
                             />
                         </div>
