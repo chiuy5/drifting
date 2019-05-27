@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-//import './App.css';
-import './ForumSubmission.css';
+import '../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 /*import { Button, Form, FormControl, FormCheck } from 'react-bootstrap';*/
 /* import { Card, CardText, CardBody, CardTitle } from 'reactstrap'; */
@@ -8,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from 'react-router-dom';
 //import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import Mindfulness from "./../components/Mindfulness";
+
 
 export default class ForumSubmission extends Component {
     // Set up a blank title and description input field
@@ -39,17 +39,16 @@ export default class ForumSubmission extends Component {
         this.props.history.push(path);
     }
 
-/*     componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll);
-    } */
+    componentDidMount() {
+        document.getElementById("exercise").addEventListener('scroll', this.handleScroll);
+    }
 
-
-/*     handleScroll(event) {
-        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    handleScroll() {
+        let winScroll = document.getElementById("exercise").scrollLeft;
+        let height = document.getElementById("exercise").scrollWidth - document.getElementById("exercise").clientWidth;
         let scrolled = (winScroll / height) * 100;
         document.getElementById("myBar").style.width = scrolled + "%";
-    } */
+    }
 
     // Add a method to handle changes to any input element
     handleChange(event) {
@@ -94,7 +93,6 @@ export default class ForumSubmission extends Component {
 
             this.setState({
                 message: data
-
             })
 
         }).catch((err, data) => {
@@ -104,77 +102,19 @@ export default class ForumSubmission extends Component {
 
     }
 
-    scrollLeft = (e) => {
+    /*I have no idea why .scrollRight += 300 doesn't work*/
+    scrollLeft = (e, clsName) => {
         e.preventDefault();
-
-        /*I have no idea why .scrollRight += 300 doesn't work*/
         document.getElementById("exercise").scrollLeft -= 600;
-
-        /*document.dispatchEvent(new KeyboardEvent("keydown", { key: "37", char: undefined, shiftKey: false }));*/
-        /*let event = document.createEvent("KeyboardEvent");
-        event.initKeyboardEvent("keyleft", false, false);*/
-        /*let evt = new KeyboardEvent('keyleft');
-               document.dispatchEvent(evt); */
     }
 
-    scrollRight = (e) => {
+    scrollRight = (e, id) => {
         e.preventDefault();
         document.getElementById("exercise").scrollLeft += 600;
-        /*let event = document.createEvent("KeyboardEvent");
-        event.initEvent("keyright", false, false);*/
-
+        let currEl = document.getElementById(id);
+        currEl.className = "child visible";
     }
 
-
-
-
-
-    // When the user click submit, the value change on title and description 
-    //onSubmit = e => {
-    //    e.preventDefault();
-    //    this.props.onSubmit(this.state);
-    //    this.setState({
-    //        title: "",
-    //        description: ""
-    //    })
-    //};
-    /*
-        addBottle() {
-            console.log(this.state.isPublic);
-            let bottle = {
-                emotion: this.state.emotion,
-                exercise: this.state.exercise,
-                body: this.state.body,
-                tags: this.state.tags,
-                isPublic: this.state.isPublic,
-            }
-    
-            console.log(bottle);
-    
-            fetch("https://api.kychiu.me/v1/ocean/ocean", {
-                method: "POST",
-                body: 
-                    {emotion: this.state.emotion,
-                        exercise: this.state.exercise,
-                        body: this.state.body,
-                        tags: this.state.tags,
-                        isPublic: this.state.isPublic
-                    }
-            }).then(res => {
-                return res.json();
-            }).then((data) => {
-                console.log("bottle1", data);
-                this.clearState();
-            }).catch((err, data) => {
-                console.log(err);
-                console.log("bottle2", data);
-            });
-    
-    
-            
-            //this.cardsRef.push(card);    
-        }
-    }*/
 
     addBottle = (e) => {
         /*console.log(this.state.isPublic);
@@ -277,18 +217,15 @@ export default class ForumSubmission extends Component {
 
 
             <div className="container">
+
                 <div id="nav-links">
                     <Link to="/">Home</Link> | <Link to="/excercise">Express</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a>
                 </div>
 
-{/*                 <div class="progress-container">
-                         <div class="progress-bar" id="myBar"></div>
-                </div> */}
-
                 <form id="exercise" className="container">
 
 
-                    <section className="child" >
+                    <section className="child visible" id="s0" >
                         <div className="intro">
 
 
@@ -302,7 +239,7 @@ export default class ForumSubmission extends Component {
                             </div>
 
                             <div id="buttons">
-                                <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e)}>
+                                <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e, "s1")}>
                                     Continue →
                                  </button>
                             </div>
@@ -310,68 +247,7 @@ export default class ForumSubmission extends Component {
                         </div>
                     </section>
 
-{/*                     <section className="child">
-                        <label>(1/7) How are you feeling right now?</label>
-                        <br />
-                        <div className="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label className="btn btn-secondary">
-                                <input type="radio"
-                                    name="emotion"
-                                    value="+2"
-                                    checked={this.state.emotion === "+2"}
-                                    onChange={(event) => { this.handleChange(event) }}
-                                />
-                                Great
-                        </label>
-                            <label className="btn btn-secondary">
-                                <input type="radio"
-                                    name="emotion"
-                                    value="+1"
-                                    checked={this.state.emotion === "+1"}
-                                    onChange={(event) => { this.handleChange(event) }}
-                                />
-                                Good
-                        </label>
-                            <label className="btn btn-secondary">
-                                <input type="radio"
-                                    name="emotion"
-                                    value="0"
-                                    checked={this.state.emotion === "0"}
-                                    onChange={(event) => { this.handleChange(event) }}
-                                />
-                                Okay
-                        </label>
-                            <label className="btn btn-secondary">
-                                <input type="radio"
-                                    name="emotion"
-                                    value="-1"
-                                    checked={this.state.emotion === "-1"}
-                                    onChange={(event) => { this.handleChange(event) }}
-                                />
-                                Bad
-                        </label>
-                            <label className="btn btn-secondary">
-                                <input type="radio"
-                                    name="emotion"
-                                    value="-2"
-                                    checked={this.state.emotion === "-2"}
-                                    onChange={(event) => { this.handleChange(event) }}
-                                />
-                                Awful
-                        </label>
-                        </div>
-
-                                             <div id="buttons">
-                        <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
-                            ←
-                        </button>
-                        <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e)}>
-                            →
-                        </button>
-                    </div> }
-                    </section> */}
-
-                    <section className="child">
+                    <section className="child hidden" id="s1">
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1">(1/6) What's on your mind?</label>
                             <textarea id="text-box" className="form-control"
@@ -386,16 +262,16 @@ export default class ForumSubmission extends Component {
                         </div>
 
                         <div id="buttons">
-                                <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
-                                    ←
+                            <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e, "s0")}>
+                                ←
                                 </button>
-                                <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e)}>
-                                    →
+                            <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e, "s2")}>
+                                →
                                  </button>
                         </div>
                     </section>
 
-                    <section className="child">
+                    <section className="child hidden" id="s2">
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1">(2/6) Could the situation be worse than it is? And how so?</label>
                             <textarea id="text-box" className="form-control"
@@ -410,16 +286,16 @@ export default class ForumSubmission extends Component {
                         </div>
 
                         <div id="buttons">
-                                <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
-                                    ←
+                            <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e, "s1")}>
+                                ←
                                 </button>
-                                <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e)}>
-                                    →
+                            <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e, "s3")}>
+                                →
                                  </button>
                         </div>
                     </section>
 
-                    <section className="child">
+                    <section className="child hidden" id="s3">
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (3/6) What are some factors that contributed to the situation?</label>
                             <textarea id="text-box" className="form-control"
@@ -435,16 +311,16 @@ export default class ForumSubmission extends Component {
                         </div>
 
                         <div id="buttons">
-                                <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
-                                    ←
+                            <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e, "s2")}>
+                                ←
                                 </button>
-                                <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e)}>
-                                    →
+                            <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e, "s4")}>
+                                →
                                  </button>
                         </div>
                     </section>
 
-                    <section className="child">
+                    <section className="child hidden" id="s4">
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (4/6) What factors in the situation are in your control?</label>
                             <textarea id="text-box" className="form-control"
@@ -459,16 +335,16 @@ export default class ForumSubmission extends Component {
                         </div>
 
                         <div id="buttons">
-                                <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
-                                    ←
+                            <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e, "s3")}>
+                                ←
                                 </button>
-                                <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e)}>
-                                    →
+                            <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e, "s5")}>
+                                →
                                  </button>
                         </div>
                     </section>
 
-                    <section className="child">
+                    <section className="child hidden" id="s5">
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (5/6) Can you brainstorm solutions you can do to address your situation?</label>
                             <textarea id="text-box" className="form-control"
@@ -483,32 +359,32 @@ export default class ForumSubmission extends Component {
                         </div>
 
                         <div id="buttons">
-                                <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
-                                    ←
+                            <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e, "s4")}>
+                                ←
                                 </button>
-                                <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e)}>
-                                    →
+                            <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e, "s6")}>
+                                →
                                  </button>
                         </div>
                     </section>
 
-                    <section className="child" id="mindfulness">
+                    <section className="child hidden" id="s6">
                         <p> Take some time to complete this mindfulness exercise</p>
-                        
+
                         <Mindfulness />
 
                         <p>Or go right to skip → </p>
                         <div id="buttons">
-                                <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
-                                    ←
+                            <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e, "s5")}>
+                                ←
                                 </button>
-                                <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e)}>
-                                    →
+                            <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e, "s7")}>
+                                →
                                  </button>
                         </div>
                     </section>
 
-                    <section className="child">
+                    <section className="child hidden" id="s7">
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (6/6) How do you feel now?</label>
                             <textarea id="text-box" className="form-control"
@@ -534,13 +410,13 @@ export default class ForumSubmission extends Component {
                         </div>
 
                         <div id="buttons">
-                            <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
+                            <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e, "s6")}>
                                 ←
                             </button>
-                            <button className="btn btn-primary mr-2" onClick={(e) => {this.addBottle(e)}}>
+                            <button className="btn btn-primary mr-2" onClick={(e) => { this.addBottle(e) }}>
                                 Post
                          </button>
-{/*                             <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
+                            {/*                             <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
                                 Only I Can See
                          </button>*/}
                             <button className="btn btn-primary mr-2" onClick={() => this.disposeBottle()}>
@@ -549,6 +425,10 @@ export default class ForumSubmission extends Component {
                         </div>
                     </section>
                 </form>
+
+                <div className="progress-container">
+                    <div className="progress-bar" id="myBar"></div>
+                </div>
             </div>
 
 

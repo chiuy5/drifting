@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-/* import './Encouragement.css'; */
-import './ForumSubmission.css';
+import '../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 /*import { Button, Form, FormControl, FormCheck } from 'react-bootstrap';
 import { Card, CardText, CardBody, CardTitle } from 'reactstrap';
@@ -37,6 +36,17 @@ export default class Encouragement extends Component {
         this.props.history.push(path);
     }
 
+    componentDidMount() {
+        document.getElementById("exercise").addEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll() {
+        let winScroll = document.getElementById("exercise").scrollLeft;
+        let height = document.getElementById("exercise").scrollWidth - document.getElementById("exercise").clientWidth;
+        let scrolled = (winScroll / height) * 100;
+        document.getElementById("myBar").style.width = scrolled + "%";
+    }
+
     // Add a method to handle changes to any input element
     handleChange(event) {
         let field = event.target.name;
@@ -58,16 +68,17 @@ export default class Encouragement extends Component {
         });
     }
 
-    scrollLeft = (e) => {
+    scrollLeft = (e, clsName) => {
         e.preventDefault();
         document.getElementById("exercise").scrollLeft -= 600;
     }
 
-    scrollRight = (e) => {
+    scrollRight = (e, id) => {
         e.preventDefault();
         document.getElementById("exercise").scrollLeft += 600;
+        let currEl = document.getElementById(id);
+        currEl.className = "child visible";
     }
-
 
     addBottle = (e) => {
         e.preventDefault();
@@ -157,13 +168,13 @@ export default class Encouragement extends Component {
         return (
             <div className="container">
                 <div id="nav-links">
-                <Link to="/">Home</Link> | <Link to="/excercise">Express</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a>
-            </div>
+                    <Link to="/">Home</Link> | <Link to="/excercise">Express</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a>
+                </div>
 
                 <div className="container" id="exercise">
 
 
-                    <section className="child">
+                    <section className="child visible" id="s0">
                         <div className="intro">
 
 
@@ -181,7 +192,7 @@ export default class Encouragement extends Component {
                             </div>
 
                             <div id="buttons">
-                                <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e)}>
+                                <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e, "s1")}>
                                     Continue →
                                  </button>
                             </div>
@@ -189,7 +200,7 @@ export default class Encouragement extends Component {
                     </section>
 
 
-                    <section className="child">
+                    <section className="child hidden" id="s1">
                         <form>
 
                             <div id="section">
@@ -224,20 +235,24 @@ export default class Encouragement extends Component {
 
 
                         <div id="buttons">
-                        <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
+                            <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
                                 ←
                             </button>
-                        <button className="btn btn-primary mr-2" onClick={(e) => this.addBottle(e)}>
-                            Post
+                            <button className="btn btn-primary mr-2" onClick={(e) => this.addBottle(e, "s0")}>
+                                Post
                          </button>
-                    {/* <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
+                            {/* <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
                             Only I Can See
                         </button> */}
-                        <button className="btn btn-primary mr-2" onClick={() => this.disposeBottle()}>
-                            Dispose
+                            <button className="btn btn-primary mr-2" onClick={() => this.disposeBottle()}>
+                                Dispose
                         </button>
                         </div>
                     </section>
+                </div>
+
+                <div className="progress-container">
+                    <div className="progress-bar" id="myBar"></div>
                 </div>
             </div>
         );
