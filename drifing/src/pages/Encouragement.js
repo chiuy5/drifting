@@ -201,11 +201,10 @@ export default class Encouragement extends Component {
                             <div id="section">
                                 <div className="form-group">
                                     <label htmlFor="exampleFormControlTextarea1">Write some Encouragement</label>
-                                    <textarea className="form-control"
+                                    <textarea className="form-control box-input"
                                         name="0"
                                         value={this.state.body[0]}
                                         onChange={(event) => { this.handleQuestion(event) }}
-                                        id="text-box"
                                         rows="3"
                                         placeholder="Write something here..."
                                         aria-label="some description texts">
@@ -216,11 +215,10 @@ export default class Encouragement extends Component {
                             <div id="section">
                                 <div className="form-group">
                                     <label htmlFor="formGroupExampleInput">Tags</label>
-                                    <input type="text" className="form-control"
+                                    <input type="text" className="form-control box-input"
                                         name="tags"
                                         value={this.state.tags}
                                         onChange={(event) => { this.handleChange(event) }}
-                                        id="text-box"
                                         placeholder="Tag your bottle (Seperate each tag by a comma)"
                                         aria-label="Tag your bottle"
                                     />
