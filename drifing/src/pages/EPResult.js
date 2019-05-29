@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 
 export default class EPResult extends Component {
+    componentDidMount() {
+        setTimeout(function() { //Start the timer
+            document.getElementById("main").className = "visible-t";
+        }, 10)
+    }
+
+
     render() {
         return (
             <div className="container">
-                <div id="main" className="visible">
+                <div id="main" className="hidden">
                     <p>Thank you for completing the exercise</p>
                     <p>Expressing your thoughts is a big step for taking care of yourself</p>
                     <p>Remember, it'll be alright</p>

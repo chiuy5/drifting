@@ -9,16 +9,19 @@ export default class Home extends Component {
         this.state = {};
     }
 
+    componentDidMount() {
+        setTimeout(function() { //Start the timer
+            document.getElementById("front").className = "visible-t";
+        }, 10)
+    }
+
     render() {
         return (
             <div className="container">
-{/*                 <div id="nav-links">
-                    <Link to="/">Home</Link> | <Link to="/excercise">Express</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a>
-                </div> */}
                 <div className="homepage">
-                    <div id="front">
+                    <div id="front" className="hidden">
                         <a href="./">
-                            <img src="drifting_logo.png" className="drifting-logo" /></a>
+                            <img src="drifting_logo.png" className="drifting-logo" alt="Drifting"/></a>
                         <br />
 
                         <div id="main">

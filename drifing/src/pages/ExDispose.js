@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 
 export default class ExDispose extends Component {
     componentDidMount() {
-       /*setTimeout('', 5000);        
-        document.getElementById("main").className="visible";*/
+        setTimeout(function() { //Start the timer
+            document.getElementById("main").className = "visible";
+        }, 10)
     }
 
 
     render() {
         return (
             <div className="container">
-                <div id="main" className="visible">
+                <div id="main" className="hidden">
                     <p>Thank you for completing the exercise</p>
                     <p>Even if you didn't choose to share your bottle</p>
                     <p>We hope you're able to feel better</p>

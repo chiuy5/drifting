@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 
 export default class Crisis extends Component {
     // Set up a blank title and description input field
-    constructor(props) {
-        super(props);
-        this.state = {};
+    componentDidMount() {
+        setTimeout(function() { //Start the timer
+            document.getElementById("main").className = "visible-t";
+        }, 10)
     }
 
     render() {
         return (
             <div className="container">
-                <div id="main">
+                <div id="main" className="hidden">
                     <p>Thank you for reaching out</p>
                     <p>However, we do not have the capabilities to help you directly at the moment.</p>
                     <p>Here are some resources to consider:</p>

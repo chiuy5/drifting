@@ -4,15 +4,16 @@ import { Link } from "react-router-dom";
 
 export default class Exercise extends Component {
     // Set up a blank title and description input field
-    constructor(props) {
-        super(props);
-        this.state = {};
+    componentDidMount() {
+        setTimeout(function() { //Start the timer
+            document.getElementById("main").className = "visible";
+        }, 10)
     }
 
     render() {
         return (
             <div className="container">
-                <div id="main">
+                <div id="main" className="hidden">
                     What would you like to do?
                     <br />
                     <br />

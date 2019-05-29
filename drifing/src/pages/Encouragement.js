@@ -32,6 +32,10 @@ export default class Encouragement extends Component {
     }
 
     componentDidMount() {
+        setTimeout(function() { //Start the timer
+            document.getElementById("exercise").className = "container visible-t";
+        }, 10)
+
         document.getElementById("exercise").addEventListener('scroll', this.handleScroll);
     }
 
@@ -162,7 +166,7 @@ export default class Encouragement extends Component {
     render() {
         return (
             <div className="container">
-                <div className="container" id="exercise">
+                <div className="container hidden" id="exercise">
 
 
                     <section className="child visible" id="s0">

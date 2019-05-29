@@ -110,6 +110,12 @@ html, body {
    scroll-snap-type: x mandatory;
 }
 
+#exercise label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
 .child {
    width: 100%;
    margin: 0 auto 0 auto;
@@ -123,14 +129,29 @@ html, body {
    display: "block";
    visibility: visible;
    opacity: 1;
-   transition: opacity 2s linear;
+   transition: opacity 1.5s linear;
  }
+
+ .visible-t {
+  display: "block";
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
 
 .hidden {
    opacity: 0;
    visibility: hidden;
-   transition: opacity 2s linear;
+   transition: opacity 1s ease-in;
  }
+
+ .hidden-t {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in;
+  display: none;
+}
+
 
 
 #text-box {
@@ -183,4 +204,18 @@ html, body {
 
 .description-checkbox {
   float: right;
+}
+
+.q-desc {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  font-size: 10pt;
+  width: 80%;
+  text-align: left;
+}
+
+.prompt {
+  width: 90%;
+  margin: auto;
 }
