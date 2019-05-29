@@ -12,9 +12,9 @@ export default class Home extends Component {
     render() {
         return (
             <div className="container">
-                <div id="nav-links">
+{/*                 <div id="nav-links">
                     <Link to="/">Home</Link> | <Link to="/excercise">Express</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a>
-                </div>
+                </div> */}
                 <div className="homepage">
                     <div id="front">
                         <a href="./">

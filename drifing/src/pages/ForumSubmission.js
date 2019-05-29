@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-/*import { Button, Form, FormControl, FormCheck } from 'react-bootstrap';*/
-/* import { Card, CardText, CardBody, CardTitle } from 'reactstrap'; */
-/*import Forum from './Forum';*/
-import { Link } from 'react-router-dom';
-//import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import Mindfulness from "./../components/Mindfulness";
 
 
@@ -41,6 +36,24 @@ export default class ForumSubmission extends Component {
 
     componentDidMount() {
         document.getElementById("exercise").addEventListener('scroll', this.handleScroll);
+
+        let checkbox = document.getElementById("dsc-check");
+        checkbox.addEventListener( 'change', function() {
+            if(this.checked) {
+                let desc = document.getElementsByClassName("q-desc hidden");
+                console.log(desc);
+                Array.from(desc).forEach(function (d){
+                    d.className = "q-desc visible";
+                });
+
+            } else {
+                let desc = document.getElementsByClassName("q-desc visible");
+                console.log(desc);
+                Array.from(desc).forEach(function (d){
+                    d.className = "q-desc hidden";
+                });
+            }
+        });
     }
 
     handleScroll() {
@@ -218,8 +231,8 @@ export default class ForumSubmission extends Component {
 
             <div className="container">
 
-                <div id="nav-links">
-                    <Link to="/">Home</Link> | <Link to="/excercise">Express</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a>
+                <div className="description-checkbox">
+                    <label><input type="checkbox" id="dsc-check" /> Show Description</label>
                 </div>
 
                 <form id="exercise" className="container">
@@ -250,6 +263,7 @@ export default class ForumSubmission extends Component {
                     <section className="child hidden" id="s1">
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1">(1/6) What's on your mind?</label>
+                            <div className="q-desc hidden">Description</div>
                             <textarea id="text-box" className="form-control"
                                 name="0"
                                 value={this.state.body[0]}
@@ -274,6 +288,7 @@ export default class ForumSubmission extends Component {
                     <section className="child hidden" id="s2">
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1">(2/6) Could the situation be worse than it is? And how so?</label>
+                            <div className="q-desc hidden">Description</div>
                             <textarea id="text-box" className="form-control"
                                 name="1"
                                 value={this.state.body[1]}
@@ -298,6 +313,7 @@ export default class ForumSubmission extends Component {
                     <section className="child hidden" id="s3">
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (3/6) What are some factors that contributed to the situation?</label>
+                            <div className="q-desc hidden">Description</div>
                             <textarea id="text-box" className="form-control"
                                 name="2"
                                 value={this.state.body[2]}
@@ -323,6 +339,7 @@ export default class ForumSubmission extends Component {
                     <section className="child hidden" id="s4">
                         <div className="form-group">
                             <label htmlFor="exampleFormControlTextarea1"> (4/6) What factors in the situation are in your control?</label>
+                            <div className="q-desc hidden">Description</div>
                             <textarea id="text-box" className="form-control"
                                 name="3"
                                 value={this.state.body[3]}
@@ -413,18 +430,17 @@ export default class ForumSubmission extends Component {
                             <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e, "s6")}>
                                 ←
                             </button>
-                            <button className="btn btn-primary mr-2" onClick={(e) => { this.addBottle(e) }}>
-                                Post
+                            <button className="btn btn-primary mr-2" data-toggle="tooltip" data-placement="top" title="Tooltip on top" onClick={(e) => { this.addBottle(e) }}>
+                                Share
                          </button>
-                            {/*                             <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
-                                Only I Can See
-                         </button>*/}
-                            <button className="btn btn-primary mr-2" onClick={() => this.disposeBottle()}>
-                                Dispose
+                            <button className="btn btn-primary mr-2" data-toggle="tooltip" data-placement="top" title="Tooltip on top" onClick={() => this.disposeBottle()}>
+                                Release
                         </button>
                         </div>
                     </section>
                 </form>
+
+
 
                 <div className="progress-container">
                     <div className="progress-bar" id="myBar"></div>

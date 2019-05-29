@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 
 export default class Crisis extends Component {
     // Set up a blank title and description input field
@@ -11,9 +10,6 @@ export default class Crisis extends Component {
     render() {
         return (
             <div className="container">
-                <div id="nav-links">
-                    <Link to="/">Home</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a> | <Link to="/excercise">Express</Link>
-                </div>
                 <div id="main">
                     <p>Thank you for reaching out</p>
                     <p>However, we do not have the capabilities to help you directly at the moment.</p>

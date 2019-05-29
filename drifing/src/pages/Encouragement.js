@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-/*import { Button, Form, FormControl, FormCheck } from 'react-bootstrap';
-import { Card, CardText, CardBody, CardTitle } from 'reactstrap';
-import Forum from './Forum';*/
-import { Link } from "react-router-dom";
-//import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 export default class Encouragement extends Component {
     // Set up a blank title and description input field
@@ -167,10 +162,6 @@ export default class Encouragement extends Component {
     render() {
         return (
             <div className="container">
-                <div id="nav-links">
-                    <Link to="/">Home</Link> | <Link to="/excercise">Express</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a>
-                </div>
-
                 <div className="container" id="exercise">
 
 
