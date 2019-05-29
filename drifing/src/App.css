@@ -12,12 +12,6 @@
 
 }
 
-.description {
-  align-content: left;
-  height: 200px;
-  width: 800px;
-}
-
 .homepage {
   margin-top: 10%;
 }
@@ -69,6 +63,9 @@ body {
    background: rgba(red, green, blue, 0);
 }
 
+.form-control {
+  width: 80% !important;
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -154,15 +151,21 @@ html, body {
 
 
 
-#text-box {
+.box-input {
    width: 75%;
    margin: auto;
 }
 
 
-#description {
+.mindfulness {
+  width: 80%;
+  margin: auto;
+}
+
+.description {
    margin: auto;
    font-size: 12pt;
+   text-align: center;
 }
 
 #nav-links {
@@ -184,24 +187,6 @@ html, body {
    width: 0%;
  }
 
- .fade-enter {
-  opacity: 0.01;
-}
-
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity 300ms ease-in;
-}
-
-.fade-exit {
-  opacity: 1;
-}
-
-.fade-exit.fade-exit-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
-}
-
 .description-checkbox {
   float: right;
 }
@@ -211,11 +196,12 @@ html, body {
   margin-right: auto;
   margin-bottom: 20px;
   font-size: 10pt;
-  width: 80%;
+  width: 90%;
   text-align: left;
 }
 
 .prompt {
   width: 90%;
+  text-align: left;
   margin: auto;
 }

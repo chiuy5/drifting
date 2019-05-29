@@ -34,10 +34,10 @@ export default class ForumSubmission extends Component {
     }
 
     componentDidMount() {
-        setTimeout(function() { //Start the timer
+        setTimeout(function () { //Start the timer
             document.getElementById("main-ex").className = "container visible-t"
         }, 100)
-        
+
 
         document.getElementById("exercise").addEventListener('scroll', this.handleScroll);
 
@@ -45,15 +45,15 @@ export default class ForumSubmission extends Component {
         checkbox.addEventListener('change', function () {
             if (this.checked) {
                 let desc = document.getElementsByClassName("q-desc hidden-t");
-                console.log(desc);
                 Array.from(desc).forEach(function (d) {
+                    d.style.display = "block";
                     d.className = "q-desc visible";
                 });
 
             } else {
                 let desc = document.getElementsByClassName("q-desc visible");
-                console.log(desc);
                 Array.from(desc).forEach(function (d) {
+                    d.style.display = "none";
                     d.className = "q-desc hidden-t";
                 });
             }
@@ -96,9 +96,15 @@ export default class ForumSubmission extends Component {
 
     scrollRight = (e, id) => {
         e.preventDefault();
-        document.getElementById("exercise").scrollLeft += 600;
+        if (id === "s3") {
+            document.getElementById("s2.5").style.display = "none";
+        } else {
+            document.getElementById("exercise").scrollLeft += 600;
+        }
+
         let currEl = document.getElementById(id);
         currEl.className = "child visible";
+
     }
 
 
@@ -205,7 +211,7 @@ export default class ForumSubmission extends Component {
             <div id="main-ex" className="container hidden">
 
                 <div className="description-checkbox">
-                    <label><input type="checkbox" id="dsc-check" /> Show Description</label>
+                    <label><input type="checkbox" id="dsc-check" /> Show Guides</label>
                 </div>
 
                 <form id="exercise" className="container">
@@ -215,11 +221,14 @@ export default class ForumSubmission extends Component {
                         <div className="intro">
 
 
-                            <h1>New Bottle</h1>
+                            <h3>Navigation Bottle</h3>
+                            <i>Navigate Through Stressful Thoughts</i>
                             <div className="prompt">
-                                <div id="description">
+                                <div className="description">
                                     <br />
-                                    <p>If you’re going through some stormy waters, let’s walkthrough the following exercise. We’ll find a way to pass this storm.</p>
+                                    <br />
+                                    <p>If you’re going through some stormy waters, let’s walkthrough the following exercise<br />We’ll find a way to pass this storm.</p>
+                                    <br />
                                     <p>Feel free to go at your own pace, and skip any questions you want</p>
                                     <br />
                                 </div>
@@ -238,10 +247,10 @@ export default class ForumSubmission extends Component {
                         <div className="form-group">
 
                             <div className="prompt">
-                                <label htmlFor="exampleFormControlTextarea1">(1/6) What's on your mind?</label>
-                                <div className="q-desc hidden-t">Write a bit about the current situation that got you feeling down. While it can be difficult to share, getting it off your chest can help.</div>
+                                <label htmlFor="exampleFormControlTextarea1">1/6 - What's on your mind?</label>
+                                <div className="q-desc hidden-t">Write a bit about the current situation that got you feeling down<br />While it can be difficult to share, getting it off your chest can help.</div>
                             </div>
-                            <textarea id="text-box" className="form-control"
+                            <textarea className="form-control box-input"
                                 name="0"
                                 value={this.state.body[0]}
                                 onChange={(event) => { this.handleQuestion(event) }}
@@ -265,10 +274,10 @@ export default class ForumSubmission extends Component {
                     <section className="child hidden" id="s2">
                         <div className="form-group">
                             <div className="prompt">
-                                <label htmlFor="exampleFormControlTextarea1">(2/6) How can the situation be worse?</label>
+                                <label htmlFor="exampleFormControlTextarea1">2/6 - How can the situation be worse?</label>
                                 <div className="q-desc hidden-t">Think about your situation would look like if it was worse than it already is. While what you’re going through is already tough, imagining the worst case scenario can also help put things into perspective.</div>
                             </div>
-                            <textarea id="text-box" className="form-control"
+                            <textarea className="form-control box-input"
                                 name="1"
                                 value={this.state.body[1]}
                                 onChange={(event) => { this.handleQuestion(event) }}
@@ -283,19 +292,40 @@ export default class ForumSubmission extends Component {
                             <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e, "s1")}>
                                 ←
                                 </button>
+                            <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e, "s2.5")}>
+                                →
+                                 </button>
+                        </div>
+                    </section>
+
+                    <section className="child hidden" id="s2.5">
+                        <div className="form-group">
+                            <div className="prompt">
+                                <div className="description">
+                                    <label>Remember,<br />although you’re trekking through rough waters right now,<br />storms don’t last forever</label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div id="buttons">
+                            <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e, "s2")}>
+                                ←
+                                </button>
                             <button id="right-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollRight(e, "s3")}>
                                 →
                                  </button>
                         </div>
                     </section>
 
+
                     <section className="child hidden" id="s3">
                         <div className="form-group">
                             <div className="prompt">
-                                <label htmlFor="exampleFormControlTextarea1"> (3/6) What contributed to your situation? Please list a few factors:</label>
-                                <div className="q-desc hidden-t">When things get stormy, it’s can be hard to see the big picture. Take some time to think about what else was involved.</div>
+                                <label htmlFor="exampleFormControlTextarea1"> 3/6 - What contributed to your situation? Please list a few factors:</label>
+                                <div className="q-desc hidden-t">When things get stormy, it’s can be hard to see the big picture<br />Take some time to think about what else was involved.</div>
                             </div>
-                            <textarea id="text-box" className="form-control"
+                            <textarea className="form-control box-input"
                                 name="2"
                                 value={this.state.body[2]}
                                 onChange={(event) => { this.handleQuestion(event) }}
@@ -320,10 +350,10 @@ export default class ForumSubmission extends Component {
                     <section className="child hidden" id="s4">
                         <div className="form-group">
                             <div className="prompt">
-                                <label htmlFor="exampleFormControlTextarea1"> (4/6) What factors in the situation are in your control?</label>
+                                <label htmlFor="exampleFormControlTextarea1"> 4/6 - What factors in the situation are in your control?</label>
                                 <div className="q-desc hidden-t">While there may be many factors involved, not all of the factors have direct relationship to you. Take some time to remember what factors you’re able to control</div>
                             </div>
-                            <textarea id="text-box" className="form-control"
+                            <textarea className="form-control box-input"
                                 name="3"
                                 value={this.state.body[3]}
                                 onChange={(event) => { this.handleQuestion(event) }}
@@ -347,10 +377,10 @@ export default class ForumSubmission extends Component {
                     <section className="child hidden" id="s5">
                         <div className="form-group">
                             <div className="prompt">
-                                <label htmlFor="exampleFormControlTextarea1"> (5/6) Let’s brainstorm some solutions!</label>
+                                <label htmlFor="exampleFormControlTextarea1"> 5/6 - Let’s brainstorm some solutions!</label>
                                 <div className="q-desc hidden-t">Now that we narrowed down to what factors are in your control, let’s think of some ways to help address your situation</div>
                             </div>
-                            <textarea id="text-box" className="form-control"
+                            <textarea className="form-control box-input"
                                 name="4"
                                 value={this.state.body[4]}
                                 onChange={(event) => { this.handleQuestion(event) }}
@@ -390,10 +420,10 @@ export default class ForumSubmission extends Component {
                     <section className="child hidden" id="s7">
                         <div className="form-group">
                             <div className="prompt">
-                                <label htmlFor="exampleFormControlTextarea1"> (6/6) How do you feel about your situation now?</label>
-                                <div className="q-desc hidden-t">By completing this exercise, we hope that you’re able to think about your situation through a different perspective. Feel free to jot down some reminders to yourself about how you want to address you situation from now on</div>
+                                <label htmlFor="exampleFormControlTextarea1"> 6/6 - How do you feel about your situation now?</label>
+                                <div className="q-desc hidden-t">By completing this exercise, we hope that you’re able to think about your situation through a different perspective <br />Feel free to jot down some reminders to yourself about how you want to address you situation from now on</div>
                             </div>
-                            <textarea id="text-box" className="form-control"
+                            <textarea className="form-control box-input"
                                 name="5"
                                 value={this.state.body[5]}
                                 onChange={(event) => { this.handleQuestion(event) }}
@@ -405,11 +435,11 @@ export default class ForumSubmission extends Component {
 
                         <div className="form-group">
                             <label htmlFor="formGroupExampleInput">Tags</label>
-                            <input type="text" id="text-box" className="form-control"
+                            <input type="text" className="form-control box-input"
                                 name="tags"
                                 value={this.state.tags}
                                 onChange={(event) => { this.handleChange(event) }}
-                                id="text-box"
+
                                 placeholder="Tag your bottle (Seperate each tag by a comma)"
                                 aria-label="Tags for your bottle"
                             />
