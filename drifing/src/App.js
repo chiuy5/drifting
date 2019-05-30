@@ -15,6 +15,8 @@ import Crisis from "./pages/Crisis";
 import EPResult from "./pages/EPResult";
 import EncResult from "./pages/EncResult";
 import ExDispose from "./pages/ExDispose";
+import Forum from "./pages/Forum";
+
 
 class App extends Component {
 
@@ -25,6 +27,7 @@ class App extends Component {
           <div id="nav-links">
             <Link to="/">Home</Link> | <Link to="/excercise">Express</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a>
           </div>
+          
 
           <Switch>
             <Route exact path="/" component={Home} />
@@ -36,7 +39,7 @@ class App extends Component {
             <Route path="/en_result" component={EncResult} />
             <Route path="/excercise" component={Exercise} />
             <Route path="/ex_dispose" component={ExDispose} />
-
+            <Route path="/forum" component={Forum} />
           </Switch>
         </Router>
 
