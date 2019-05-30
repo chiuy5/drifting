@@ -7,7 +7,7 @@ export default class NavBar extends Component {
     render() {
         return (
             <div id="nav-links">
-                <Link to="/">Home</Link> | <Link to="/excercise">Express</Link> | <a href="https://chiuy5.github.io/drifting/ocean/">Explore</a>
+                <Link to="/">Home</Link> | <Link to="/excercise">Express</Link> | <Link to="/forum">Explore</Link>
             </div>
         );
     }

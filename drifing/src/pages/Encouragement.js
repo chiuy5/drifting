@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
+const prompts = [
+    "Share Some Advice: Think about a tough time you went through. What’s the advice you would’ve want a friend to tell you or some reasons you found that was helpful?", "Share a personal experience: what’s something that you went through and what did you learn from it?", "Share some words of comfort: What’s a saying or quote that makes you feel relieved?", "Share some resources: What"
+];
+
 export default class Encouragement extends Component {
     // Set up a blank title and description input field
     constructor(props) {
@@ -32,7 +36,7 @@ export default class Encouragement extends Component {
     }
 
     componentDidMount() {
-        setTimeout(function() { //Start the timer
+        setTimeout(function () { //Start the timer
             document.getElementById("exercise").className = "container visible-t";
         }, 10)
 
@@ -45,6 +49,11 @@ export default class Encouragement extends Component {
         let scrolled = (winScroll / height) * 100;
         document.getElementById("myBar").style.width = scrolled + "%";
     }
+
+    getPrompt() {
+        
+    }
+
 
     // Add a method to handle changes to any input element
     handleChange(event) {
@@ -176,12 +185,16 @@ export default class Encouragement extends Component {
                             <h1>Encouraging Bottle</h1>
                             <br />
                             <div id="description">
-                                <p>Share an encouraging message. It can be advice, a resource, a personal experience, or words of comfort</p>
+                                <p>Share an encouraging message and brighten someone’s day!</p>
+                                <br />
 
                                 <div id="guide">
-                                    Be empathetic<br />
-                                    Acknowledge, but not minimize, other's emotions<br />
-                                    Don't feel pressure to have to talk<br />
+                                    <h5>Helpful Reminders</h5>
+                                    <ul>
+                                        <li>Be empathetic</li>
+                                        <li>Acknowledge, but not minimize, other's emotions</li>
+                                        <li>Don't feel pressure to have to talk</li>
+                                    </ul>
                                 </div>
                                 <br />
                             </div>
@@ -197,8 +210,12 @@ export default class Encouragement extends Component {
 
                     <section className="child hidden" id="s1">
                         <form>
-
                             <div id="section">
+                                <div className="suggestions">
+                                <button className="btn btn-primary mr-2" id="prompt-button" onClick={}>
+                                Get Prompt
+                         </button>
+                                </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleFormControlTextarea1">Write some Encouragement</label>
                                     <textarea className="form-control box-input"
