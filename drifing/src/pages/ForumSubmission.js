@@ -17,9 +17,6 @@ export default class ForumSubmission extends Component {
         };
 
         this.routeChange = this.routeChange.bind(this);;
-
-        //this.handleChange = this.handleChange.bind(this);
-        //this.postBottle = this.postBottle.bind(this);
     }
 
 
@@ -109,16 +106,6 @@ export default class ForumSubmission extends Component {
 
 
     addBottle = (e) => {
-        /*console.log(this.state.isPublic);
-        let bottle = {
-            emotion: this.state.emotion,
-            exercise: this.state.exercise,
-            body: this.state.body,
-            tags: this.state.tags,
-            isPublic: this.state.isPublic,
-        }*/
-
-        //console.log(bottle);
         e.preventDefault();
         fetch("https://api.kychiu.me/v1/ocean/ocean", {
             method: "POST",
@@ -151,52 +138,9 @@ export default class ForumSubmission extends Component {
             body: ["", "", "", "", "", ""],
             tags: "",
             isPublic: ""
-        }, () => {
-            console.log("empty", this.state);
         });
-
     }
 
-    postBottle() {
-        //this.setState({type: "public"});
-        this.setState(
-            { isPublic: true },
-            () => {
-                console.log("post", this.state);
-                this.addBottle();
-            }
-        );
-    }
-
-    saveBottle = (e) => {
-        e.preventDefault();
-        this.setState(
-            { isPublic: false },
-            () => {
-                console.log("save", this.state);
-                //this.addBottle();
-                fetch("https://api.kychiu.me/v1/ocean/ocean", {
-                    method: "POST",
-                    body:
-                    {
-                        emotion: "-1",
-                        exercise: this.state.exercise,
-                        body: this.state.body,
-                        tags: this.state.tags,
-                        isPublic: this.state.isPublic
-                    }
-                }).then(res => {
-                    return res.json();
-                }).then((data) => {
-                    console.log("bottle1", data);
-                    this.clearState();
-                }).catch((err, data) => {
-                    console.log(err);
-                    console.log("bottle2", data);
-                });
-            }
-        );
-    }
 
     disposeBottle() {
         this.clearState();
@@ -406,9 +350,10 @@ export default class ForumSubmission extends Component {
                     <section className="child hidden" id="s6">
                         <p> Take some time to complete this mindfulness exercise</p>
 
-                        <Mindfulness />
+                        <h1>Work in progress...</h1>    
+                        {/*<Mindfulness />*/}
 
-                        <p>Or go right to skip → </p>
+
                         <div id="buttons">
                             <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e, "s5")}>
                                 ←

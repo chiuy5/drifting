@@ -10,7 +10,8 @@ import ForumSubmission from "./pages/ForumSubmission";
 import Encouragement from "./pages/Encouragement";
 
 import EPResult from "./pages/EPResult";
-import EncResult from "./pages/EncResult";
+import EncResultShare from "./pages/EncResult";
+//import EncResultDispose from "./pages/EncResult";
 import ExDispose from "./pages/ExDispose";
 import Forum from "./pages/Forum";
 import Explore from "./pages/Explore"
@@ -39,7 +40,7 @@ class App extends Component {
             <Route path="/support" component={Support} />
             <Route path="/emergency" component={Crisis} />
             <Route path="/ep_result" component={EPResult} />
-            <Route path="/en_result" component={EncResult} />
+            <Route path="/en_result" component={EncResultShare} />
             <Route path="/excercise" component={Exercise} />
             <Route path="/ex_dispose" component={ExDispose} />
             <Route path="/explore" component={Explore} />

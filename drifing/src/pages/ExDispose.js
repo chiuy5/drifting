@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 export default class ExDispose extends Component {
     componentDidMount() {
@@ -17,7 +18,7 @@ export default class ExDispose extends Component {
                     <p>We hope you're able to feel better</p>
                     <br/>
                     <br/>
-                    <p><a href="https://chiuy5.github.io/drifting/ocean/">Take some time and explore other's bottles</a></p>
+                    <div><Link to="/explore">Take some time and explore other's bottles</Link></div>
                 </div>
 
             </div>

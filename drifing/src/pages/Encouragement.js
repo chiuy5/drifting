@@ -3,7 +3,11 @@ import '../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const prompts = [
-    "<b>Share Some Advice:</b><br/>Think about a tough time you went through. What’s the advice you would’ve want a friend to tell you or some reasons you found that was helpful?", "<b>Share a personal experience:</b><br/>What’s something that you went through and what did you learn from it?", "<b>Share some words of comfort:</b><br/> What’s a saying or quote that makes you feel relieved?", "<b>Share some resources:</b><br/> What"
+    "<b>Share some advice</b><br/>Think about a tough time you went through. What advice would’ve you want to give yourself?",
+    "<b>Reflect on a personal experience</b><br/>What’s an experience that you felt that was very impactful, and what did you learn from it?",
+    "<b>Offer some comforting words</b><br/>What’s a saying or quote that makes you feel relieved?",
+    "<b>Suggest some resources</b><br/>What are some resources or activities that you find helpful when dealing with a tough situation?",
+    "<b>Share a cheer!</b><br/>Write a saying that helps you stay motivated when things get tough!"
 ];
 
 export default class Encouragement extends Component {
@@ -17,11 +21,6 @@ export default class Encouragement extends Component {
             tags: "",
             isPublic: true,
         };
-
-        //this.displayMessage = this.displayMessage.bind(this);
-
-        //this.handleChange = this.handleChange.bind(this);
-        //this.postBottle = this.postBottle.bind(this);
         this.routeChange = this.routeChange.bind(this);
     }
 
@@ -57,8 +56,8 @@ export default class Encouragement extends Component {
         event.preventDefault();
         let currPrompt = Math.floor((Math.random() * prompts.length));
         let promptBox = document.getElementById("prompt-box");
-        
-        
+
+
         promptBox.innerHTML = prompts[currPrompt];
     }
 
@@ -98,28 +97,31 @@ export default class Encouragement extends Component {
 
     addBottle = (e) => {
         e.preventDefault();
-        fetch("https://api.kychiu.me/v1/ocean/ocean", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(
-                {
-                    emotion: "+1",
-                    exercise: 2,
-                    body: this.state.body,
-                    tags: this.state.tags,
-                    isPublic: this.state.isPublic
-                })
-        }).then(res => {
-            return res.json();
-        }).then((data) => {
-            console.log("bottle", data);
-            this.clearState();
-            this.routeChange("post");
-        }).catch((err, data) => {
-            console.log(err);
-        });
+        if (!this.state.body || this.state.body[0].length === 0) {
+            alert("Cannot post an empty encouragement");
+        } else {
+            fetch("https://api.kychiu.me/v1/ocean/ocean", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(
+                    {
+                        emotion: "+1",
+                        exercise: 2,
+                        body: this.state.body,
+                        tags: this.state.tags,
+                        isPublic: this.state.isPublic
+                    })
+            }).then(res => {
+                return res.json();
+            }).then((data) => {
+                this.clearState();
+                this.routeChange("post");
+            }).catch((err, data) => {
+                console.log(err);
+            });
+        }
     }
 
     clearState() {
@@ -129,8 +131,6 @@ export default class Encouragement extends Component {
             body: [""],
             tags: "",
             isPublic: ""
-        }, () => {
-            console.log("empty", this.state);
         });
     }
 
@@ -145,35 +145,6 @@ export default class Encouragement extends Component {
         );
     }
 
-    saveBottle = (e) => {
-        e.preventDefault();
-        this.setState(
-            { isPublic: false },
-            () => {
-                console.log("save", this.state);
-                //this.addBottle();
-                fetch("https://api.kychiu.me/v1/ocean/ocean", {
-                    method: "POST",
-                    body:
-                    {
-                        emotion: "+1",
-                        exercise: 2,
-                        body: this.state.body,
-                        tags: this.state.tags,
-                        isPublic: this.state.isPublic
-                    }
-                }).then(res => {
-                    return res.json();
-                }).then((data) => {
-                    console.log("bottle1", data);
-                    this.clearState();
-                }).catch((err, data) => {
-                    console.log(err);
-                    console.log("bottle2", data);
-                });
-            }
-        );
-    }
 
     disposeBottle() {
         this.clearState();
@@ -200,7 +171,7 @@ export default class Encouragement extends Component {
                                     <ul>
                                         <li>Be empathetic</li>
                                         <li>Acknowledge, but not minimize, other's emotions</li>
-                                        <li>Don't feel pressure to have to talk</li>
+                                        <li>Don’t feel pressured to overshare</li>
                                     </ul>
                                 </div>
                                 <br />
@@ -259,14 +230,11 @@ export default class Encouragement extends Component {
                             <button id="left-button" className="btn btn-primary mr-2" onClick={(e) => this.scrollLeft(e)}>
                                 ←
                             </button>
-                            <button className="btn btn-primary mr-2" onClick={(e) => this.addBottle(e, "s0")}>
-                                Post
+                            <button className="btn btn-primary mr-2" title="Post your bottle publically" onClick={(e) => this.addBottle()}>
+                                Share
                          </button>
-                            {/* <button className="btn btn-primary mr-2" onClick={(e) => this.saveBottle(e)}>
-                            Only I Can See
-                        </button> */}
-                            <button className="btn btn-primary mr-2" onClick={() => this.disposeBottle()}>
-                                Dispose
+                            <button className="btn btn-primary mr-2" title="Set your bottle free" onClick={() => this.disposeBottle()}>
+                                Release
                         </button>
                         </div>
                     </section>
