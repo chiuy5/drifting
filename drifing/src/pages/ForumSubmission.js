@@ -221,7 +221,7 @@ export default class ForumSubmission extends Component {
                         <div className="intro">
 
 
-                            <h3>Navigation Bottle</h3>
+                            <h3>Reflection Bottle</h3>
                             <i>Navigate Through Stressful Thoughts</i>
                             <div className="prompt">
                                 <div className="description">
@@ -248,7 +248,7 @@ export default class ForumSubmission extends Component {
 
                             <div className="prompt">
                                 <label htmlFor="exampleFormControlTextarea1">1/6 - What's on your mind?</label>
-                                <div className="q-desc hidden-t">Write a bit about the current situation that got you feeling down<br />While it can be difficult to share, getting it off your chest can help.</div>
+                                <div className="q-desc hidden-t">Write a bit about the current situation that got you feeling down<br />While it can be difficult to share, getting it off your chest can help</div>
                             </div>
                             <textarea className="form-control box-input"
                                 name="0"
@@ -275,7 +275,7 @@ export default class ForumSubmission extends Component {
                         <div className="form-group">
                             <div className="prompt">
                                 <label htmlFor="exampleFormControlTextarea1">2/6 - How can the situation be worse?</label>
-                                <div className="q-desc hidden-t">Think about your situation would look like if it was worse than it already is. While what you’re going through is already tough, imagining the worst case scenario can also help put things into perspective.</div>
+                                <div className="q-desc hidden-t">While what you’re going through is already tough,<br/>Imagining the worst case scenario can help put things into perspective</div>
                             </div>
                             <textarea className="form-control box-input"
                                 name="1"
@@ -302,7 +302,9 @@ export default class ForumSubmission extends Component {
                         <div className="form-group">
                             <div className="prompt">
                                 <div className="description">
-                                    <label>Remember,<br />although you’re trekking through rough waters right now,<br />storms don’t last forever</label>
+                                    <label>Remember,<br /><br />Although you’re trekking through rough waters,<br />Storms don’t last forever</label>
+                                    <br />
+                                    <br />
                                 </div>
 
                             </div>
@@ -323,7 +325,7 @@ export default class ForumSubmission extends Component {
                         <div className="form-group">
                             <div className="prompt">
                                 <label htmlFor="exampleFormControlTextarea1"> 3/6 - What contributed to your situation? Please list a few factors:</label>
-                                <div className="q-desc hidden-t">When things get stormy, it’s can be hard to see the big picture<br />Take some time to think about what else was involved.</div>
+                                <div className="q-desc hidden-t">When things get stormy, it’s can be hard to see the big picture<br />Take some time to think about what else was involved</div>
                             </div>
                             <textarea className="form-control box-input"
                                 name="2"
@@ -351,7 +353,7 @@ export default class ForumSubmission extends Component {
                         <div className="form-group">
                             <div className="prompt">
                                 <label htmlFor="exampleFormControlTextarea1"> 4/6 - What factors in the situation are in your control?</label>
-                                <div className="q-desc hidden-t">While there may be many factors involved, not all of the factors have direct relationship to you. Take some time to remember what factors you’re able to control</div>
+                                <div className="q-desc hidden-t">While there may be many factors involved, not all of the factors have direct relationship to you<br/>Take some time to remember what factors you’re able to control</div>
                             </div>
                             <textarea className="form-control box-input"
                                 name="3"

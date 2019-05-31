@@ -2,6 +2,12 @@
   text-align: center;
 }
 
+.text-long {
+  text-align: left;
+  margin: auto;
+  width: 40%;
+}
+
 .drifting-logo {
   height: 150px;
 }
@@ -13,7 +19,7 @@
 }
 
 .homepage {
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .App-header {
@@ -26,6 +32,9 @@
   color: black;
 }
 
+.home-desc-sub {
+  font-size: 10pt;
+}
 
 
 .App-link {
@@ -35,7 +44,7 @@
 .links-nav {
   display: flex;
   justify-content: space-between;
-  width: 350px;
+  width: 50%;
   margin: auto;
 }
 
@@ -88,6 +97,7 @@ html, body {
    scroll-behavior: smooth;
 }
 
+/* Exercises to scroll left-right */
 #exercise {
    background: rgba(red, green, blue, 0);
    width: 100vw;
@@ -112,7 +122,6 @@ html, body {
   font-weight: bold;
 }
 
-
 .child {
    width: 100%;
    margin: 0 auto 0 auto;
@@ -121,6 +130,21 @@ html, body {
    align-self: center;
 }
 
+/* textbox input sizing */
+.box-input {
+  width: 75%;
+  margin: auto;
+}
+
+.q-desc {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  font-size: 10pt;
+  text-align: left;
+}
+
+/* CSS Fading effects */
 /*https://fvsch.com/transition-fade/test5.html#test3*/
 .visible {
    display: "block";
@@ -150,13 +174,6 @@ html, body {
 }
 
 
-
-.box-input {
-   width: 75%;
-   margin: auto;
-}
-
-
 .mindfulness {
   width: 80%;
   margin: auto;
@@ -171,6 +188,11 @@ html, body {
 #nav-links {
    font-size: 10pt;
    margin-bottom: 10px;
+}
+
+.sublink {
+  width: 30%;
+  align-self: center;
 }
 
 /* The progress container (grey background) */
@@ -191,17 +213,10 @@ html, body {
   float: right;
 }
 
-.q-desc {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-  font-size: 10pt;
-  width: 90%;
-  text-align: left;
-}
 
+/* prompts for the encouragement */
 .prompt {
-  width: 90%;
+  width: 80%;
   text-align: left;
   margin: auto;
 }
@@ -210,4 +225,24 @@ ul {
   text-align: left;
   margin: auto;
   display: table;
+}
+
+.suggestions {
+  display: flex;
+  text-align: left;
+  width: 80%;
+  margin: auto;
+  padding-bottom: 20px; 
+}
+
+
+#prompt-box {
+  width: 50%;
+  flex: 2;
+  height: 100px;
+}
+
+#prompt-btn-holder {
+  align-self: flex-start;
+  margin-left: 30px;
 }

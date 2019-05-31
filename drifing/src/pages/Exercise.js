@@ -18,8 +18,10 @@ export default class Exercise extends Component {
                     <br />
                     <br />
                     <div id="nav-link">
-                        <Link to="/processing">Emotional Processing</Link><br />
-                        <Link to="/encourage">Encourage</Link><br />
+                        <Link to="/processing">Reflect On Emotions</Link><br />
+                        <Link to="/encourage">Offer Encouragement</Link><br />
+                        Express Graditude<br />
+                        Look at Resources<br />
                     </div>
 
                 </div>

@@ -8,14 +8,19 @@ import NavBar from "./components/NavBar";
 
 import ForumSubmission from "./pages/ForumSubmission";
 import Encouragement from "./pages/Encouragement";
-import Home from "./pages/Home";
-import Exercise from "./pages/Exercise";
-import Great from "./pages/Great";
-import Crisis from "./pages/Crisis";
+
 import EPResult from "./pages/EPResult";
 import EncResult from "./pages/EncResult";
 import ExDispose from "./pages/ExDispose";
 import Forum from "./pages/Forum";
+import Explore from "./pages/Explore"
+
+
+import Home from "./pages/Home";
+import Exercise from "./pages/Exercise";
+import Support from "./pages/Support";
+import Crisis from "./pages/Crisis";
+
 
 
 
@@ -31,12 +36,13 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/processing" component={ForumSubmission} />
             <Route path="/encourage" component={Encouragement} />
-            <Route path="/great" component={Great} />
-            <Route path="/crisis" component={Crisis} />
+            <Route path="/support" component={Support} />
+            <Route path="/emergency" component={Crisis} />
             <Route path="/ep_result" component={EPResult} />
             <Route path="/en_result" component={EncResult} />
             <Route path="/excercise" component={Exercise} />
             <Route path="/ex_dispose" component={ExDispose} />
+            <Route path="/explore" component={Explore} />
             <Route path="/forum" component={Forum} />
           </Switch>
         </Router>

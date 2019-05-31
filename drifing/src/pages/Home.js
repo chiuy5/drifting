@@ -3,14 +3,9 @@ import { Link } from "react-router-dom";
 //import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 export default class Home extends Component {
-    // Set up a blank title and description input field
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
 
     componentDidMount() {
-        setTimeout(function() { //Start the timer
+        setTimeout(function () { //Start the timer
             document.getElementById("front").className = "visible-t";
         }, 10)
     }
@@ -21,20 +16,26 @@ export default class Home extends Component {
                 <div className="homepage">
                     <div id="front" className="hidden">
                         <a href="./">
-                            <img src="drifting_logo.png" className="drifting-logo" alt="Drifting"/></a>
+                            <img src="drifting_logo.png" className="drifting-logo" alt="Drifting" /></a><br />
+
+                            <div className="home-desc">
+                            Set your thoughts adrift in a bottle,<br />
+                            and free your mind to float<br />
+                            <br />
+                            <div className="home-desc-sub">
+                            <i>A platform for individual and peer support in non-emergencies</i>
+                            </div>
+                            </div>
+
                         <br />
 
                         <div id="main">
-                            <p>How are you feeling right now?</p>
+                            <p>What do would you like to do?</p>
                             <div className="links-nav">
-                                <div><Link to="/great">Great</Link></div>
-                                <div><Link to="/processing">Worse than Usual</Link></div>
-                                <div><Link to="/crisis">In Crisis</Link></div>
+                                <div><Link to="/support">Get Support</Link></div>
+                                <div><Link to="/explore">Explore</Link></div>
+                                <div><Link to="/encourage">Offer Support</Link></div>
                             </div>
-                            <br />
-                            <br />
-                            <br />
-                            <a href="https://chiuy5.github.io/drifting/ocean/">Or do you want to explore first?</a>
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@ import '../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const prompts = [
-    "Share Some Advice: Think about a tough time you went through. What’s the advice you would’ve want a friend to tell you or some reasons you found that was helpful?", "Share a personal experience: what’s something that you went through and what did you learn from it?", "Share some words of comfort: What’s a saying or quote that makes you feel relieved?", "Share some resources: What"
+    "<b>Share Some Advice:</b><br/>Think about a tough time you went through. What’s the advice you would’ve want a friend to tell you or some reasons you found that was helpful?", "<b>Share a personal experience:</b><br/>What’s something that you went through and what did you learn from it?", "<b>Share some words of comfort:</b><br/> What’s a saying or quote that makes you feel relieved?", "<b>Share some resources:</b><br/> What"
 ];
 
 export default class Encouragement extends Component {
@@ -41,6 +41,9 @@ export default class Encouragement extends Component {
         }, 10)
 
         document.getElementById("exercise").addEventListener('scroll', this.handleScroll);
+
+        let currPrompt = Math.floor((Math.random() * prompts.length));
+        document.getElementById("prompt-box").innerHTML = prompts[currPrompt];
     }
 
     handleScroll() {
@@ -50,8 +53,13 @@ export default class Encouragement extends Component {
         document.getElementById("myBar").style.width = scrolled + "%";
     }
 
-    getPrompt() {
+    getPrompt(event) {
+        event.preventDefault();
+        let currPrompt = Math.floor((Math.random() * prompts.length));
+        let promptBox = document.getElementById("prompt-box");
         
+        
+        promptBox.innerHTML = prompts[currPrompt];
     }
 
 
@@ -183,9 +191,8 @@ export default class Encouragement extends Component {
 
 
                             <h1>Encouraging Bottle</h1>
-                            <br />
                             <div id="description">
-                                <p>Share an encouraging message and brighten someone’s day!</p>
+                                <p><i>Share an encouraging message and brighten someone’s day!</i></p>
                                 <br />
 
                                 <div id="guide">
@@ -212,12 +219,15 @@ export default class Encouragement extends Component {
                         <form>
                             <div id="section">
                                 <div className="suggestions">
-                                <button className="btn btn-primary mr-2" id="prompt-button" onClick={}>
-                                Get Prompt
-                         </button>
+                                    <div id="prompt-box" className="visible"></div>
+                                    <div id="prompt-btn-holder">
+                                        <button className="btn btn-outline-primary btn-sm" id="prompt-button" aria-pressed="false" onClick={(event) => this.getPrompt(event)}>
+                                            Get Prompt
+                                        </button>
+                                    </div>
+
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="exampleFormControlTextarea1">Write some Encouragement</label>
                                     <textarea className="form-control box-input"
                                         name="0"
                                         value={this.state.body[0]}
@@ -238,6 +248,7 @@ export default class Encouragement extends Component {
                                         onChange={(event) => { this.handleChange(event) }}
                                         placeholder="Tag your bottle (Seperate each tag by a comma)"
                                         aria-label="Tag your bottle"
+                                        required
                                     />
                                 </div>
                             </div>
