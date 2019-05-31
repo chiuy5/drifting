@@ -47,8 +47,9 @@ class App extends Component {
             <Route path="/forum" component={Forum} />
           </Switch>
         </Router>
-
+        <footer className="disclaimer">* Drifting was created for educational purposes, our team are not certified mental health professsionals</footer>  
       </div >
+      
     );
   }
 }

@@ -19,7 +19,7 @@ export class Gallery extends Component {
         this.state = {
             filter: "",
             bottles: [],
-            url: "https://api.kychiu.me/v1/ocean/ocean" 
+            url: "https://api.kychiu.me/v1/ocean/ocean"
         }
     }
 
@@ -70,22 +70,26 @@ export class Gallery extends Component {
         //console.log("gallery", this.state.bottles);
         return (
             <div>
-                <div className="intro">
-                    <h1>Explore Others' Mood Cards</h1>
+                <div className="gallery-header">
+                    <div className="intro">
+                        <h3>Explore Others' Bottles</h3>
+                    </div>
+                    <InputGroup>
+                        <Input type="text" className="form-control"
+                            name="filter"
+                            value={this.state.filter}
+                            onChange={(event) => { this.handleChange(event) }}
+                            id="formGroupExampleInput"
+                            placeholder="What are you looking for?"
+                            aria-label="tags for filter" />
+                        <InputGroupAddon addonType="append"><Button onClick={this.filterBottles}>Filter</Button></InputGroupAddon>
+                    </InputGroup>
                 </div>
-                <InputGroup>
-                    <Input type="text" className="form-control"
-                        name="filter"
-                        value={this.state.filter}
-                        onChange={(event) => { this.handleChange(event) }}
-                        id="formGroupExampleInput"
-                        placeholder="What are you looking for?"
-                        aria-label="tags for filter" />
-                    <InputGroupAddon addonType="append"><Button onClick={this.filterBottles}>Filter</Button></InputGroupAddon>
-                </InputGroup>
                 <br />
-                <div>
-                    <CardList bottles={this.state.bottles} />
+                <div className="forum">
+                    <div className="cardList">
+                        <CardList bottles={this.state.bottles} />
+                    </div>
                 </div>
             </div>
         );
