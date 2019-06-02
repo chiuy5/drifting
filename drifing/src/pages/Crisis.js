@@ -26,9 +26,9 @@ export default class Crisis extends Component {
                     <br />
                     <br />
 
-                    <h4>Here Are Some Reasoures In Seattle To Reach Out To</h4>
-                    <p>[filler]</p>
-                    <p>[filler]</p>
+                    <h4>Here Are Some Resoures In Seattle To Reach Out To</h4>
+                    <p> <a href="https://www.kingcounty.gov/depts/community-human-services/mental-health-substance-abuse/services/mental-health.aspx">kingcounty Mental health services</a></p>
+                    <a href = "https://www.crisisconnections.org/"> crisisconnections</a>
                     <br />
                     <br />
 

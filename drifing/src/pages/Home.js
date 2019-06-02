@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import './Home.css';
 //import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 export default class Home extends Component {
@@ -22,7 +23,7 @@ export default class Home extends Component {
                         <br />
 
                         <div id="main">
-                            <p>How are you feeling right now?</p>
+                            <p>What would like to do right now?</p>
                             <div className="links-nav">
                                 <div><Link to="/great">Great</Link></div>
                                 <div><Link to="/processing">Worse than Usual</Link></div>
