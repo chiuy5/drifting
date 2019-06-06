@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "de317232e1c2fef9e3af2fe511cc2042",
+    "revision": "d20b417ecaf0a08ce55971fb7d3fa69f",
     "url": "/drifting/drifing/build/index.html"
   },
   {
